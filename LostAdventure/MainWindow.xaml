@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button x:Name="butJouer" Content="Jouer" HorizontalAlignment="Center" Height="119" Margin="0,160,0,0" VerticalAlignment="Top" Width="480" Click="butJouer_Click"/>
+        <Button Content="Button" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Height="100" Width="480"/>
 
     </Grid>
 </Window>
