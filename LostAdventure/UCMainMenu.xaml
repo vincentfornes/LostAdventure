@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="UCMainMenu" Height="900" Width="1600">
     <Grid>
-        
-        <Button x:Name="butJouer" Content="Jouer" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Height="100" Width="480" Click="butJouer_Click" />
-        <Button x:Name="butTouches" Content="Touches" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Height="100" Width="480" Click="butTouches_Click" />
-        <Button x:Name="butQuitter" Content="Quitter" HorizontalAlignment="Center" Margin="0,560,0,0" VerticalAlignment="Top" Height="100" Width="480" Click="butQuitter_Click" />
+
+        <Button x:Name="butJouer"  HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Height="100" Width="480" Click="butJouer_Click">
+            <Image Source="/Img/butJouer.png" Stretch="Fill" ></Image></Button>
+        <Button x:Name="butTouches"  HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Height="100" Width="480" Click="butTouches_Click" >
+            <Image Source="/Img/butTouches.png" Stretch="Fill"></Image> </Button>
+        <Button x:Name="butQuitter"  HorizontalAlignment="Center" Margin="0,560,0,0" VerticalAlignment="Top" Height="100" Width="480" Click="butQuitter_Click" >
+            <Image Source="/Img/butQuitter.png" Stretch="Fill"></Image> </Button>
 
     </Grid>
 </Window>

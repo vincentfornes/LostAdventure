@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Img\butJouer.png" />
+    <None Remove="Img\butQuitter.png" />
+    <None Remove="Img\butTouches.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\butJouer.png" />
+    <Resource Include="Img\butQuitter.png" />
+    <Resource Include="Img\butTouches.png" />
+  </ItemGroup>
+
 </Project>
