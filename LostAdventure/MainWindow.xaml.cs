@@ -19,8 +19,39 @@ namespace LostAdventure
         public MainWindow()
         {
             InitializeComponent();
+            AfficheMainMenu();
+        }
+        private void AfficheMainMenu()
+        {
+            UCMainMenu ucMainMenu = new UCMainMenu();
+            ZoneDeJeu.Content = ucMainMenu;
         }
 
-        
+        private void AfficheReglesJeu()
+        {
+            UCReglesJeu ucReglesJeu = new UCReglesJeu();
+            ZoneDeJeu.Content = ucReglesJeu;
+        }
+
+        private void butJouer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butRegles_Click(object sender, RoutedEventArgs e)
+        {
+            AfficheReglesJeu();
+        }
+
+        private void butTouches_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butQuitter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

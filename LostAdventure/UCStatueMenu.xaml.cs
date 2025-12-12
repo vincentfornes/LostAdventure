@@ -17,7 +17,7 @@ namespace LostAdventure
     /// <summary>
     /// Logique d'interaction pour UCStatueMenu.xaml
     /// </summary>
-    public partial class UCStatueMenu : Window
+    public partial class UCStatueMenu : UserControl
     {
         public UCStatueMenu()
         {

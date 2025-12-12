@@ -1,11 +1,11 @@
-﻿<Window x:Class="LostAdventure.UCStatueMenu"
+﻿<UserControl x:Class="LostAdventure.UCStatueMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
-        Title="UCStatueMenu" Height="900" Width="1600">
+        d:DesignHeight="900" d:DesignWidth="1600">
     <Grid>
         <Button x:Name="butSave" Content="Sauvegarder" HorizontalAlignment="Left" Height="50" Width="150" Margin="200,150,0,0" VerticalAlignment="Top" Click="butSave_Click"/>
         <Button x:Name="butSoin" Content="Se soigner" HorizontalAlignment="Left" Height="50" Width="150" Margin="200,300,0,0" VerticalAlignment="Top" Click="butSoin_Click"/>
@@ -13,4 +13,4 @@
         <Button x:Name="butPartir" Content="Partir" HorizontalAlignment="Left" Height="50" Width="150" Margin="200,600,0,0" VerticalAlignment="Top" Click="butPartir_Click"/>
 
     </Grid>
-</Window>
+</UserControl>

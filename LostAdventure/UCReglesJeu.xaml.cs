@@ -17,7 +17,7 @@ namespace LostAdventure
     /// <summary>
     /// Logique d'interaction pour UCReglesJeu.xaml
     /// </summary>
-    public partial class UCReglesJeu : Window
+    public partial class UCReglesJeu : UserControl
     {
         public UCReglesJeu()
         {

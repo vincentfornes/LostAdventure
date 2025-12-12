@@ -17,26 +17,15 @@ namespace LostAdventure
     /// <summary>
     /// Logique d'interaction pour UCMainMenu.xaml
     /// </summary>
-    public partial class UCMainMenu : Window
+    public partial class UCMainMenu : UserControl
     {
         public UCMainMenu()
         {
             InitializeComponent();
         }
 
-        private void butJouer_Click(object sender, RoutedEventArgs e)
-        {
+        
 
-        }
-
-        private void butTouches_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void butQuitter_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
+
 }
