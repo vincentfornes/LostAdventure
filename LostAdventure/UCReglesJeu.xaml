@@ -6,8 +6,15 @@
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
-    <Grid>
-        <Label x:Name="ReglesJeu" Content="Trouvez le trésor dans les ruines" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Height="107" Width="1385"/>
+	<Grid>
+		<Image HorizontalAlignment="center" Height="1000" Margin="0,0,0,0" VerticalAlignment="Center" Width="1000" Source="/Img/MenuRegles.png" Grid.RowSpan="1"/>
+		<Button x:Name="butQuitterRegles" Content="" HorizontalAlignment="Center" Margin="550,0,0,500" VerticalAlignment="Center" Width="100" Height="100">
+			<Button.Background>
+				<ImageBrush ImageSource="/Img/CroixMenuRegles.png"/>
+			</Button.Background>
+		</Button>
+		<Label x:Name="ReglesJeu" Content="Trouvez le trésor dans les ruines ..." HorizontalAlignment="Left" Margin="511,273,0,0" VerticalAlignment="Top" Height="377" Width="564" FontFamily="Castellar" FontSize="20" Foreground="White"/>
 
-    </Grid>
+
+	</Grid>
 </UserControl>
