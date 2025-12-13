@@ -24,8 +24,25 @@ namespace LostAdventure
             InitializeComponent();
         }
 
-        
+        private void AfficheReglesJeu()
+        {
+            
+        }
 
+        private void butJouer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butTouches_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butQuitter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }
