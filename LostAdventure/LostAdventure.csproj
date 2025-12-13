@@ -14,6 +14,8 @@
     <None Remove="Img\butJouer.png" />
     <None Remove="Img\butQuitter.png" />
     <None Remove="Img\butTouches.png" />
+    <None Remove="Img\CroixMenuRegles.png" />
+    <None Remove="Img\MenuRegles.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +25,8 @@
     <Resource Include="Img\butJouer.png" />
     <Resource Include="Img\butQuitter.png" />
     <Resource Include="Img\butTouches.png" />
+    <Resource Include="Img\CroixMenuRegles.png" />
+    <Resource Include="Img\MenuRegles.png" />
   </ItemGroup>
 
 </Project>

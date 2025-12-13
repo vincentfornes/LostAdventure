@@ -6,22 +6,45 @@
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
-    <Grid>
 
+	<Grid>
 
-        <Button x:Name="butJouer"  HorizontalAlignment="Center" Margin="0,450,0,0" VerticalAlignment="Top" Height="75" Width="400" Click="butJouer_Click">
-            <Image Source="/Img/butJouer.png" Stretch="Fill" ></Image>
-        </Button>
-        <Button x:Name="butRegles"  HorizontalAlignment="Center" Margin="0,550,0,0" VerticalAlignment="Top" Height="75" Width="400" Click="butRegles_Click">
-            <Image Source="/Img/butRegles.png" Stretch="Fill"></Image>
-        </Button>
-        <Button x:Name="butTouches"  HorizontalAlignment="Center" Margin="0,650,0,0" VerticalAlignment="Top" Height="75" Width="400" Click="butTouches_Click" >
-            <Image Source="/Img/butTouches.png" Stretch="Fill"></Image>
-        </Button>
-        <Button x:Name="butQuitter"  HorizontalAlignment="Center" Margin="0,750,0,0" VerticalAlignment="Top" Height="75" Width="400" Click="butQuitter_Click" >
-            <Image Source="/Img/butQuitter.png" Stretch="Fill"></Image>
-        </Button >
-        
+		<Button x:Name="butJouer"
+                HorizontalAlignment="Center"
+                Margin="0,450,0,0"
+                VerticalAlignment="Top"
+                Height="75" Width="400"
+                Click="butJouer_Click">
+			<Image Source="/Img/butJouer.png" Stretch="Fill"/>
+		</Button>
 
-    </Grid>
+		<Button x:Name="butRegles"
+                HorizontalAlignment="Center"
+                Margin="0,550,0,0"
+                VerticalAlignment="Top"
+                Height="75" Width="400"
+                Click="butRegles_Click">
+			<Image Source="/Img/butRegles.png" Stretch="Fill"/>
+		</Button>
+
+		<Button x:Name="butTouches"
+                HorizontalAlignment="Center"
+                Margin="0,650,0,0"
+                VerticalAlignment="Top"
+                Height="75" Width="400"
+                Click="butTouches_Click">
+			<Image Source="/Img/butTouches.png" Stretch="Fill"/>
+		</Button>
+
+		<Button x:Name="butQuitter"
+                HorizontalAlignment="Center"
+                Margin="0,750,0,0"
+                VerticalAlignment="Top"
+                Height="75" Width="400"
+                Click="butQuitter_Click">
+			<Image Source="/Img/butQuitter.png" Stretch="Fill"/>
+		</Button>
+
+	</Grid>
 </UserControl>
+

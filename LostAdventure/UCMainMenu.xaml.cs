@@ -14,35 +14,34 @@ using System.Windows.Shapes;
 
 namespace LostAdventure
 {
-    /// <summary>
-    /// Logique d'interaction pour UCMainMenu.xaml
-    /// </summary>
-    public partial class UCMainMenu : UserControl
-    {
-        public UCMainMenu()
-        {
-            InitializeComponent();
-        }
+	public partial class UCMainMenu : UserControl
+	{
+		public UCMainMenu()
+		{
+			InitializeComponent();
+		}
 
-        private void AfficheReglesJeu()
-        {
-            
-        }
+		private void butJouer_Click(object sender, RoutedEventArgs e)
+		{
+			// Tu ajouteras ton écran de jeu ici plus tard
+			MessageBox.Show("Lancement du jeu !");
+		}
 
-        private void butJouer_Click(object sender, RoutedEventArgs e)
-        {
+		private void butRegles_Click(object sender, RoutedEventArgs e)
+		{
+			var main = Application.Current.MainWindow as MainWindow;
+			main?.AfficheReglesJeu();
+		}
 
-        }
+		private void butTouches_Click(object sender, RoutedEventArgs e)
+		{
+			MessageBox.Show("Touches du jeu (à venir)");
+		}
 
-        private void butTouches_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void butQuitter_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-    }
-
+		private void butQuitter_Click(object sender, RoutedEventArgs e)
+		{
+			Application.Current.Shutdown();
+		}
+	}
 }
+

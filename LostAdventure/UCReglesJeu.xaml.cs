@@ -14,14 +14,18 @@ using System.Windows.Shapes;
 
 namespace LostAdventure
 {
-    /// <summary>
-    /// Logique d'interaction pour UCReglesJeu.xaml
-    /// </summary>
-    public partial class UCReglesJeu : UserControl
-    {
-        public UCReglesJeu()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class UCReglesJeu : UserControl
+	{
+		public UCReglesJeu()
+		{
+			InitializeComponent();
+		}
+
+		private void butQuitterRegles_Click(object sender, RoutedEventArgs e)
+		{
+			var main = Application.Current.MainWindow as MainWindow;
+			main?.AfficheMainMenu();
+		}
+	}
 }
+

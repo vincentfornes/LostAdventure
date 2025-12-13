@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LostAdventure
 {
@@ -21,17 +22,17 @@ namespace LostAdventure
             InitializeComponent();
             AfficheMainMenu();
         }
-        private void AfficheMainMenu()
+        public void AfficheMainMenu()
         {
             UCMainMenu ucMainMenu = new UCMainMenu();
             ZoneDeJeu.Content = ucMainMenu;
         }
 
-        private void AfficheReglesJeu()
+        public void AfficheReglesJeu()
         {
-            UCReglesJeu ucReglesJeu = new UCReglesJeu();
-            ZoneDeJeu.Content = ucReglesJeu;
-        }
+			UCReglesJeu ucReglesJeu = new UCReglesJeu();
+			ZoneDeJeu.Content = ucReglesJeu;
+		}
 
         private void butJouer_Click(object sender, RoutedEventArgs e)
         {
@@ -50,8 +51,8 @@ namespace LostAdventure
 
         private void butQuitter_Click(object sender, RoutedEventArgs e)
         {
-
-        }
+            
+		}
 
     }
 }
