@@ -8,7 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Threading;
 
 namespace LostAdventure
 {
@@ -17,6 +17,13 @@ namespace LostAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Image[] spriteAventurier;
+        public Image[] spriteEnnemis;
+        public Image[] spriteBoss;
+        private DispatcherTimer minuterie;
+        double aventurierX, aventurierY;
+        bool left, right, up, down;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,15 +35,30 @@ namespace LostAdventure
             ZoneDeJeu.Content = ucMainMenu;
         }
 
-        public void AfficheReglesJeu()
+        private void InitialiseJeu()
         {
-			UCReglesJeu ucReglesJeu = new UCReglesJeu();
-			ZoneDeJeu.Content = ucReglesJeu;
-		}
+            aventurierX = 100;
+        }
+
+
+        private void AfficheReglesJeu()
+        {
+            UCReglesJeu ucReglesJeu = new UCReglesJeu();
+            ZoneDeJeu.Content = ucReglesJeu;
+        }
+
+        private void InitializeTimer()
+        {
+            minuterie = new DispatcherTimer();
+            minuterie.Interval = TimeSpan.FromMilliseconds(16);
+            //minuterie.Tick += ;
+            minuterie.Start();
+        }
+
 
         private void butJouer_Click(object sender, RoutedEventArgs e)
         {
-
+            InitialiseJeu();
         }
 
         private void butRegles_Click(object sender, RoutedEventArgs e)
@@ -54,5 +76,20 @@ namespace LostAdventure
             
 		}
 
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left) left = true;
+            if (e.Key == Key.Right) right = true;
+            if (e.Key == Key.Up) up = true;
+            if (e.Key == Key.Down) down = true;
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left) left = false;
+            if (e.Key == Key.Right) right = false;
+            if (e.Key == Key.Up) up = false;
+            if (e.Key == Key.Down) down = false;
+        }
     }
 }
