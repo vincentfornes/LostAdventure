@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace LostAdventure
 {
@@ -19,9 +20,18 @@ namespace LostAdventure
     /// </summary>
     public partial class UCMainMenu : UserControl
     {
+        
+
         public UCMainMenu()
         {
             InitializeComponent();
+        }
+
+        
+
+        private void Jeu (object sender, EventArgs e)
+        {
+            
         }
 
         private void AfficheReglesJeu()
@@ -43,6 +53,14 @@ namespace LostAdventure
         {
 
         }
+
+        private void butRegles_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
+
     }
 
 }

@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace LostAdventure
 {
@@ -16,6 +17,9 @@ namespace LostAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private DispatcherTimer minuterie;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,6 +36,15 @@ namespace LostAdventure
             UCReglesJeu ucReglesJeu = new UCReglesJeu();
             ZoneDeJeu.Content = ucReglesJeu;
         }
+
+        private void InitializeTimer()
+        {
+            minuterie = new DispatcherTimer();
+            minuterie.Interval = TimeSpan.FromMilliseconds(16);
+            //minuterie.Tick += ;
+            minuterie.Start();
+        }
+
 
         private void butJouer_Click(object sender, RoutedEventArgs e)
         {
@@ -53,5 +66,22 @@ namespace LostAdventure
 
         }
 
+        bool left, right, up, down;
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left) left = true;
+            if (e.Key == Key.Right) right = true;
+            if (e.Key == Key.Up) up = true;
+            if (e.Key == Key.Down) down = true;
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left) left = false;
+            if (e.Key == Key.Right) right = false;
+            if (e.Key == Key.Up) up = false;
+            if (e.Key == Key.Down) down = false;
+        }
     }
 }
