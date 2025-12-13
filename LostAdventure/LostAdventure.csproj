@@ -13,6 +13,7 @@
     <None Remove="Img\Aventurier\Aventurier.png" />
     <None Remove="Img\butJouer.png" />
     <None Remove="Img\butQuitter.png" />
+    <None Remove="Img\butRegles.png" />
     <None Remove="Img\butTouches.png" />
     <None Remove="Img\CroixMenuRegles.png" />
     <None Remove="Img\MenuRegles.png" />
@@ -24,6 +25,7 @@
     <Resource Include="Img\Aventurier\Aventurier1.gif" />
     <Resource Include="Img\butJouer.png" />
     <Resource Include="Img\butQuitter.png" />
+    <Resource Include="Img\butRegles.png" />
     <Resource Include="Img\butTouches.png" />
     <Resource Include="Img\CroixMenuRegles.png" />
     <Resource Include="Img\MenuRegles.png" />
