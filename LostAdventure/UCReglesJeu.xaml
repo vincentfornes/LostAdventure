@@ -18,7 +18,7 @@
                 Width="100" Height="100"
                 Click="butQuitterRegles_Click">
 			<Button.Background>
-				<ImageBrush ImageSource="D:\SAE 101\LostAdventure\Img\CroixMenuRegles.png"/>
+                <ImageBrush ImageSource="C:\Users\ProGamer\source\repos\LostAdventure\LostAdventure\Img\CroixMenuRegles.png"/>
 			</Button.Background>
 		</Button>
 

@@ -24,8 +24,12 @@
                 VerticalAlignment="Top"
                 Height="75" Width="400"
                 Click="butRegles_Click">
-			<Image Source="/Img/butRegles.png" Stretch="Fill"/>
-		</Button>
+			<Image Source="/Img/butRegles.png" Stretch="Fill">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="/Img/butRegles.png"/>
+                </Image.OpacityMask>
+            </Image>
+        </Button>
 
 		<Button x:Name="butTouches"
                 HorizontalAlignment="Center"

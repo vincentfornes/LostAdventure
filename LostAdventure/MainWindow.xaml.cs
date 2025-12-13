@@ -41,7 +41,7 @@ namespace LostAdventure
         }
 
 
-        private void AfficheReglesJeu()
+        public void AfficheReglesJeu()
         {
             UCReglesJeu ucReglesJeu = new UCReglesJeu();
             ZoneDeJeu.Content = ucReglesJeu;

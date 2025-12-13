@@ -31,7 +31,7 @@ namespace LostAdventure
 		private void butRegles_Click(object sender, RoutedEventArgs e)
 		{
 			var main = Application.Current.MainWindow as MainWindow;
-			main?.AfficheReglesJeu();
+			main.AfficheReglesJeu();
 		}
 
 		private void butTouches_Click(object sender, RoutedEventArgs e)
