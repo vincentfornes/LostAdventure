@@ -17,8 +17,12 @@ namespace LostAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public Image[] spriteAventurier;
+        public Image[] spriteEnnemis;
+        public Image[] spriteBoss;
         private DispatcherTimer minuterie;
+        double aventurierX, aventurierY;
+        bool left, right, up, down;
 
         public MainWindow()
         {
@@ -30,6 +34,12 @@ namespace LostAdventure
             UCMainMenu ucMainMenu = new UCMainMenu();
             ZoneDeJeu.Content = ucMainMenu;
         }
+
+        private void InitialiseJeu()
+        {
+            aventurierX = 100;
+        }
+
 
         private void AfficheReglesJeu()
         {
@@ -48,7 +58,7 @@ namespace LostAdventure
 
         private void butJouer_Click(object sender, RoutedEventArgs e)
         {
-
+            InitialiseJeu();
         }
 
         private void butRegles_Click(object sender, RoutedEventArgs e)
@@ -65,8 +75,6 @@ namespace LostAdventure
         {
 
         }
-
-        bool left, right, up, down;
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
