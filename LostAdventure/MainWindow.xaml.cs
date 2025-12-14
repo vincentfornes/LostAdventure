@@ -49,8 +49,13 @@ namespace LostAdventure
             UCReglesJeu ucReglesJeu = new UCReglesJeu();
             ZoneDeJeu.Content = ucReglesJeu;
         }
+        public void AfficheTouches()
+        {
+            UCTouches ucTouches = new UCTouches();
+            ZoneDeJeu.Content = ucTouches;
+		}
 
-        public void AfficheJeu()
+		public void AfficheJeu()
         {
             UCJeu uc = new UCJeu();
             ZoneDeJeu.Content = uc;
