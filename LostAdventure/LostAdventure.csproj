@@ -10,25 +10,58 @@
 
   <ItemGroup>
     <None Remove="Img\1Entree.png" />
-    <None Remove="Img\Aventurier\Aventurier.png" />
+    <None Remove="Img\Aventurier\AventurierMarche%283%29.png" />
+    <None Remove="Img\Aventurier\AventurierMarche%284%29.png" />
+    <None Remove="Img\Aventurier\AventurierMarche%285%29.png" />
+    <None Remove="Img\Aventurier\AventurierMarche%286%29.png" />
+    <None Remove="Img\Aventurier\AventurierMarche%287%29.png" />
+    <None Remove="Img\Aventurier\AventurierMarche%288%29.png" />
     <None Remove="Img\butJouer.png" />
     <None Remove="Img\butQuitter.png" />
     <None Remove="Img\butRegles.png" />
     <None Remove="Img\butTouches.png" />
     <None Remove="Img\CroixMenuRegles.png" />
     <None Remove="Img\MenuRegles.png" />
+    <None Remove="Img\Titre.png" />
+    <None Remove="Police\PressStart2P-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Img\1Entree.png" />
-    <Resource Include="Img\Aventurier\Aventurier.png" />
-    <Resource Include="Img\Aventurier\Aventurier1.gif" />
-    <Resource Include="Img\butJouer.png" />
-    <Resource Include="Img\butQuitter.png" />
-    <Resource Include="Img\butRegles.png" />
-    <Resource Include="Img\butTouches.png" />
-    <Resource Include="Img\CroixMenuRegles.png" />
-    <Resource Include="Img\MenuRegles.png" />
+    <Resource Include="Img\Aventurier\AventurierMarche%282%29.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\Aventurier\AventurierMarche%281%29.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\Aventurier\AventurierMarche(3).png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\Aventurier\AventurierMarche(4).png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\Aventurier\AventurierMarche(5).png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\Aventurier\AventurierMarche(6).png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\Aventurier\AventurierMarche(7).png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\Aventurier\AventurierMarche(8).png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\MainMenu\butJouer.png" />
+    <Resource Include="Img\MainMenu\butQuitter.png" />
+    <Resource Include="Img\MainMenu\butRegles.png" />
+    <Resource Include="Img\MainMenu\butTouches.png" />
+    <Resource Include="Img\ReglesMenu\CroixMenuRegles.png" />
+    <Resource Include="Img\ReglesMenu\MenuRegles.png" />
+    <Resource Include="Img\MainMenu\Titre.png" />
+    <Resource Include="Police\PressStart2P-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
@@ -17,12 +18,10 @@ namespace LostAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Image[] spriteAventurier;
-        public Image[] spriteEnnemis;
-        public Image[] spriteBoss;
+        
         private DispatcherTimer minuterie;
         double aventurierX, aventurierY;
-        bool left, right, up, down;
+        bool gauche, droite;
 
         public MainWindow()
         {
@@ -35,11 +34,15 @@ namespace LostAdventure
             ZoneDeJeu.Content = ucMainMenu;
         }
 
-        private void InitialiseJeu()
+        public void InitialiseJeu()
         {
             aventurierX = 100;
+            aventurierY = 200;
+            InitializeTimer();
+            InitializeSprites();
         }
 
+        
 
         public void AfficheReglesJeu()
         {
@@ -47,49 +50,37 @@ namespace LostAdventure
             ZoneDeJeu.Content = ucReglesJeu;
         }
 
+        public void AfficheJeu()
+        {
+            UCJeu uc = new UCJeu();
+            ZoneDeJeu.Content = uc;
+        }
+
+        private void deplacementAventurier()
+        {
+
+        }
+
         private void InitializeTimer()
         {
             minuterie = new DispatcherTimer();
             minuterie.Interval = TimeSpan.FromMilliseconds(16);
-            //minuterie.Tick += ;
+            //minuterie.Tick += Jeu;
             minuterie.Start();
         }
 
-
-        private void butJouer_Click(object sender, RoutedEventArgs e)
-        {
-            InitialiseJeu();
-        }
-
-        private void butRegles_Click(object sender, RoutedEventArgs e)
-        {
-            AfficheReglesJeu();
-        }
-
-        private void butTouches_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void butQuitter_Click(object sender, RoutedEventArgs e)
-        {
-            
-		}
+        
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) left = true;
-            if (e.Key == Key.Right) right = true;
-            if (e.Key == Key.Up) up = true;
-            if (e.Key == Key.Down) down = true;
+            if (e.Key == Key.Left) droite = true;
+            if (e.Key == Key.Right) droite = true;
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) left = false;
-            if (e.Key == Key.Right) right = false;
-            if (e.Key == Key.Up) up = false;
-            if (e.Key == Key.Down) down = false;
+            if (e.Key == Key.Left) gauche = false;
+            if (e.Key == Key.Right) droite = false;
         }
     }
 }

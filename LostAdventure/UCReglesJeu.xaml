@@ -7,31 +7,35 @@
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
 
-	<Grid>
-		<Image HorizontalAlignment="Center" Height="1000" VerticalAlignment="Center" Width="1000"
-               Source="/Img/MenuRegles.png"/>
+    <Grid>
+        <Image HorizontalAlignment="Center" Height="1000" VerticalAlignment="Center" Width="1000"
+               Source="/Img/ReglesMenu/MenuRegles.png"/>
 
-		<Button x:Name="butQuitterRegles"
+        <Button x:Name="butQuitterRegles"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Margin="550,0,0,500"
                 Width="100" Height="100"
                 Click="butQuitterRegles_Click">
-			<Button.Background>
-				<ImageBrush ImageSource="D:\SAE 101\LostAdventure\Img\CroixMenuRegles.png"/>
-			</Button.Background>
-		</Button>
+            <Button.Background>
+                <ImageBrush ImageSource="/Img/ReglesMenu/CroixMenuRegles.png"/>
+            </Button.Background>
+        </Button>
 
-		<Label x:Name="ReglesJeu"
-               Content="Trouvez le trésor dans les ruines ..."
+        <Label x:Name="ReglesJeu"
                HorizontalAlignment="Left"
-               Margin="511,273,0,0"
+               Margin="500,350,0,0"
                VerticalAlignment="Top"
-               Height="377" Width="564"
-               FontFamily="Castellar"
-               FontSize="20"
-               Foreground="White"/>
-	</Grid>
+               Height="198" Width="593">
+            <TextBlock Text="Lost Adventure est un jeu &#10; d'aventure dans lequel &#10;vous incarnez un chevalier &#10;explorant des ruines perdues. &#10;Vous devez parcourir ces &#10;ruines, franchir des obstacles,&#10;et vaincre des ennemies. &#10; Une surprise vous &#10; attend au bout des ruines ..."
+                FontFamily="#Press Start 2P"
+                FontSize="19"
+                Foreground="White"
+                TextAlignment="Center"
+                />
+
+        </Label>
+    </Grid>
 
 </UserControl>
 

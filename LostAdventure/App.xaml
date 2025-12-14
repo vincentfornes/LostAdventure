@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:LostAdventure"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <FontFamily x:Key="PressStart2P">Police/PressStart2P-Regular.ttf></FontFamily>
 
     </Application.Resources>
 </Application>

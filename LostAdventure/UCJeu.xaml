@@ -1,16 +1,12 @@
-﻿<Window x:Class="LostAdventure.MainWindow"
+﻿<UserControl x:Class="LostAdventure.UCJeu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600">
-    <Window.Background>
-        <ImageBrush ImageSource="/Img/1Entree.png"></ImageBrush>
-    </Window.Background>
-    <ContentControl x:Name="ZoneDeJeu">
-        
-    </ContentControl>
-
-</Window>
+        d:DesignHeight="900" d:DesignWidth="1600">
+    <Canvas>
+        <Image x:Name="Aventurier" Source="/Img/Aventurier/AventurierMarche(1).png" Canvas.Left="200" Canvas.Bottom="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="130"/>
+    </Canvas>
+</UserControl>
