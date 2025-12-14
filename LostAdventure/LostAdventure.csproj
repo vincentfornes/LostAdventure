@@ -22,6 +22,10 @@
     <None Remove="Img\butTouches.png" />
     <None Remove="Img\CroixMenuRegles.png" />
     <None Remove="Img\MenuRegles.png" />
+    <None Remove="Img\Statue\butBoutique.png" />
+    <None Remove="Img\Statue\butPartir.png" />
+    <None Remove="Img\Statue\butSoigner.png" />
+    <None Remove="Img\Statue\Statue.png" />
     <None Remove="Img\Titre.png" />
     <None Remove="Img\TouchesMenu\TouchesIcones.png" />
     <None Remove="Img\TouchesMenu\TouchesMenu.png" />
@@ -61,6 +65,10 @@
     <Resource Include="Img\ReglesMenu\CroixMenuRegles.png" />
     <Resource Include="Img\ReglesMenu\MenuRegles.png" />
     <Resource Include="Img\MainMenu\Titre.png" />
+    <Resource Include="Img\Statue\butBoutique.png" />
+    <Resource Include="Img\Statue\butPartir.png" />
+    <Resource Include="Img\Statue\butSoigner.png" />
+    <Resource Include="Img\Statue\Statue.png" />
     <Resource Include="Img\TouchesMenu\TouchesIcones.png" />
     <Resource Include="Img\TouchesMenu\TouchesMenu.png" />
     <Resource Include="Police\PressStart2P-Regular.ttf">

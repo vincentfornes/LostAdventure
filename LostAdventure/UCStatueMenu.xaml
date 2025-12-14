@@ -6,11 +6,24 @@
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
-    <Grid>
-        <Button x:Name="butSave" Content="Sauvegarder" HorizontalAlignment="Left" Height="50" Width="150" Margin="200,150,0,0" VerticalAlignment="Top" Click="butSave_Click"/>
-        <Button x:Name="butSoin" Content="Se soigner" HorizontalAlignment="Left" Height="50" Width="150" Margin="200,300,0,0" VerticalAlignment="Top" Click="butSoin_Click"/>
-        <Button x:Name="butShop" Content="Boutique" HorizontalAlignment="Left" Height="50" Width="150" Margin="200,450,0,0" VerticalAlignment="Top" Click="butShop_Click"/>
-        <Button x:Name="butPartir" Content="Partir" HorizontalAlignment="Left" Height="50" Width="150" Margin="200,600,0,0" VerticalAlignment="Top" Click="butPartir_Click"/>
+	<Grid>
 
-    </Grid>
+		<Button x:Name="butSoin" Content="" HorizontalAlignment="Left" Height="250" Width="300" Margin="200,51,0,0" VerticalAlignment="Top" Click="butSoin_Click">
+			<Button.Background>
+				<ImageBrush ImageSource="/Img/Statue/butSoigner.png"/>
+			</Button.Background>
+		</Button>
+		<Button x:Name="butShop" Content="" HorizontalAlignment="Left" Height="250" Width="300" Margin="200,301,0,0" VerticalAlignment="Top" Click="butShop_Click">
+			<Button.Background>
+				<ImageBrush ImageSource="/Img/Statue/butBoutique.png"/>
+			</Button.Background>
+		</Button>
+		<Button x:Name="butPartir" Content="" HorizontalAlignment="Left" Height="250" Width="300" Margin="200,556,0,0" VerticalAlignment="Top" Click="butPartir_Click">
+			<Button.Background>
+				<ImageBrush ImageSource="/Img/Statue/butPartir.png"/>
+			</Button.Background>
+		</Button>
+		<Image HorizontalAlignment="Left" Height="1000" Margin="1100,140,0,0" VerticalAlignment="Top" Width="500" Source="/Img/Statue/Statue.png"/>
+
+	</Grid>
 </UserControl>
