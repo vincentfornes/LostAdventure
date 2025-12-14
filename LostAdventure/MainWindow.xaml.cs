@@ -6,6 +6,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
@@ -17,13 +18,10 @@ namespace LostAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BitmapImage[]  aventurier = new BitmapImage[8];
-        private int nb = 0;
-        public Image[] spriteEnnemis;
-        public Image[] spriteBoss;
+        
         private DispatcherTimer minuterie;
         double aventurierX, aventurierY;
-        bool left, right, up, down;
+        bool gauche, droite;
 
         public MainWindow()
         {
@@ -44,13 +42,7 @@ namespace LostAdventure
             InitializeSprites();
         }
 
-        private void Jeu(object sender, EventArgs e)
-        {
-            nb++;
-            if (nb == aventurier.Length)
-                nb= 0;
-            Aventurier.Source = aventurier[nb];
-        }
+        
 
         public void AfficheReglesJeu()
         {
@@ -58,39 +50,37 @@ namespace LostAdventure
             ZoneDeJeu.Content = ucReglesJeu;
         }
 
+        public void AfficheJeu()
+        {
+            UCJeu uc = new UCJeu();
+            ZoneDeJeu.Content = uc;
+        }
+
         private void deplacementAventurier()
         {
-        
+
         }
 
         private void InitializeTimer()
         {
             minuterie = new DispatcherTimer();
             minuterie.Interval = TimeSpan.FromMilliseconds(16);
-            minuterie.Tick += Jeu;
+            //minuterie.Tick += Jeu;
             minuterie.Start();
         }
 
-        private void InitializeSprites()
-        {
-            for (int i = 1; i < aventurier.Length; i++)
-                aventurier[i] = new BitmapImage(new Uri($"/Images/Aventurier/AventurierMarche({i}).png"));
-        }
+        
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) left = true;
-            if (e.Key == Key.Right) right = true;
-            if (e.Key == Key.Up) up = true;
-            if (e.Key == Key.Down) down = true;
+            if (e.Key == Key.Left) droite = true;
+            if (e.Key == Key.Right) droite = true;
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) left = false;
-            if (e.Key == Key.Right) right = false;
-            if (e.Key == Key.Up) up = false;
-            if (e.Key == Key.Down) down = false;
+            if (e.Key == Key.Left) gauche = false;
+            if (e.Key == Key.Right) droite = false;
         }
     }
 }

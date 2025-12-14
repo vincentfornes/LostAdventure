@@ -24,9 +24,8 @@ namespace LostAdventure
 
 		private void butJouer_Click(object sender, RoutedEventArgs e)
 		{
-			
 			var main = Application.Current.MainWindow as MainWindow;
-			main.InitialiseJeu();
+			main.AfficheJeu();
         }
 
 		private void butRegles_Click(object sender, RoutedEventArgs e)
