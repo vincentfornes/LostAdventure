@@ -7,32 +7,28 @@
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
 
-    <Grid>
-        <Image HorizontalAlignment="Center" Height="1000" VerticalAlignment="Center" Width="1000" Source="/Img/ReglesMenu/MenuRegles.png"/>
+	<Grid>
+		<Image HorizontalAlignment="Center" Height="1000" VerticalAlignment="Center" Width="1000" Source="/Img/ReglesMenu/MenuRegles.png"/>
 
-        <Button x:Name="butQuitterRegles"
+		<Button x:Name="butQuitterRegles"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Margin="550,0,0,500"
                 Width="100" Height="100"
                 Click="butQuitterRegles_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/Img/ReglesMenu/CroixMenuRegles.png"/>
-            </Button.Background>
-        </Button>
+			<Button.Background>
+				<ImageBrush ImageSource="/Img/ReglesMenu/CroixMenuRegles.png"/>
+			</Button.Background>
+		</Button>
 
-        <Label x:Name="ReglesJeu"
-            HorizontalAlignment="Left"
-               Margin="500,350,0,0"
-               VerticalAlignment="Top"
-               Height="198" Width="593">
-            <TextBlock Text="Lost Adventure est un jeu &#10; d'aventure dans lequel &#10;vous incarnez un chevalier &#10;explorant des ruines perdues. &#10;Vous devez parcourir ces &#10;ruines, franchir des obstacles,&#10;et vaincre des ennemies. &#10; Une surprise vous &#10; attend au bout des ruines ..."
+
+		<TextBlock Text="Lost Adventure est un jeu &#10; d'aventure dans lequel &#10;vous incarnez un chevalier &#10;explorant des ruines perdues. &#10;Vous devez parcourir ces &#10;ruines, franchir des obstacles,&#10;et vaincre des ennemies. &#10; Une surprise vous &#10; attend au bout des ruines ..."
                 FontFamily="#Press Start 2P"
-                FontSize="19"
+                FontSize="36"
                 Foreground="White"
-                TextAlignment="Center" Width="584"
+                TextAlignment="Center" Margin="502,269,518,240"
                 />
-        </Label>
-    </Grid>
+
+	</Grid>
 </UserControl>
 
