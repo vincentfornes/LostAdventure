@@ -24,7 +24,7 @@
                 VerticalAlignment="Top"
                 Height="75" Width="400"
                 Click="butRegles_Click">
-            <Image Source="/Img/butRegles.png" Stretch="Fill"/>
+			<Image Source="D:\SAE 101\LostAdventure\Img\butRegles.png" Stretch="Fill"/>
 		</Button>
 
 		<Button x:Name="butTouches"
