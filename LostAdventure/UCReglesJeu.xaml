@@ -30,7 +30,7 @@
                 FontFamily="#Press Start 2P"
                 FontSize="19"
                 Foreground="White"
-                TextAlignment="Center" Width="296"
+                TextAlignment="Center" Width="584"
                 />
         </Label>
     </Grid>

@@ -23,6 +23,7 @@
     <None Remove="Img\CroixMenuRegles.png" />
     <None Remove="Img\MenuRegles.png" />
     <None Remove="Img\Titre.png" />
+    <None Remove="Img\TouchesMenu\TouchesIcones.png" />
     <None Remove="Img\TouchesMenu\TouchesMenu.png" />
     <None Remove="Police\PressStart2P-Regular.ttf" />
   </ItemGroup>
@@ -60,6 +61,9 @@
     <Resource Include="Img\ReglesMenu\CroixMenuRegles.png" />
     <Resource Include="Img\ReglesMenu\MenuRegles.png" />
     <Resource Include="Img\MainMenu\Titre.png" />
+    <Resource Include="Img\TouchesMenu\TouchesIcones.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Img\TouchesMenu\TouchesMenu.png" />
     <Resource Include="Police\PressStart2P-Regular.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
