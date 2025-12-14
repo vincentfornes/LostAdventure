@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,21 +22,22 @@ namespace LostAdventure
     
     public partial class UCJeu : UserControl
     {
-        private BitmapImage[] aventurier = new BitmapImage[8];
+        private BitmapImage[] spriteAventurier = new BitmapImage[8];
         private int nb = 0;
         public Image[] spriteEnnemis;
         public Image[] spriteBoss;
         public UCJeu()
         {
             InitializeComponent();
+            InitializeSprites();
         }
 
         public void Jeu(object sender, EventArgs e)
         {
             nb++;
-            if (nb == aventurier.Length)
+            if (nb == spriteAventurier.Length)
                 nb = 0;
-            Aventurier.Source = aventurier[nb];
+            Aventurier.Source = spriteAventurier[nb];
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -48,17 +50,24 @@ namespace LostAdventure
 
         public void InitializeSprites()
         {
-            for (int i = 1; i < aventurier.Length; i++)
-                aventurier[i] = new BitmapImage(new Uri($"pack://application:,,,/Img/Aventurier/AventurierMarche({i}).png"));
+            for (int i = 1; i < spriteAventurier.Length; i++)
+                spriteAventurier[i] = new BitmapImage(new Uri($"pack://application:,,,/Img/Aventurier/AventurierMarche({i}).png"));
         }
 
         private void canvasJeu_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left)
-                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)+2);
-            if (e.Key == Key.Right)
-                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)-2);
+            double positionLeftAventurier = Canvas.GetLeft(Aventurier);
 
+            if (double.IsNaN(positionLeftAventurier))
+                positionLeftAventurier = 0;
+
+            if (e.Key == Key.Q)
+                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)-2);
+            if (e.Key == Key.D)
+                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)+2);
+            #if DEBUG
+            Console.WriteLine("Position Left Aventurier :" + Canvas.GetLeft(Aventurier));
+            #endif
         }
 
         private void canvasJeu_KeyUp(object sender, KeyEventArgs e)

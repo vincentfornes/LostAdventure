@@ -32,6 +32,7 @@ namespace LostAdventure
         {
             UCMainMenu ucMainMenu = new UCMainMenu();
             ZoneDeJeu.Content = ucMainMenu;
+            
         }
 
         public void InitialiseJeu()
@@ -39,7 +40,7 @@ namespace LostAdventure
             aventurierX = 100;
             aventurierY = 200;
             InitializeTimer();
-            InitializeSprites();
+           
         }
 
         
@@ -73,14 +74,14 @@ namespace LostAdventure
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) droite = true;
-            if (e.Key == Key.Right) droite = true;
+            if (e.Key == Key.Q) droite = true;
+            if (e.Key == Key.D) droite = true;
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left) gauche = false;
-            if (e.Key == Key.Right) droite = false;
+            if (e.Key == Key.Q) gauche = false;
+            if (e.Key == Key.D) droite = false;
         }
     }
 }
