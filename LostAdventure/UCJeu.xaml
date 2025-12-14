@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LostAdventure"
+        Focusable="True"
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
     <Canvas>
-        <Image x:Name="Aventurier" Source="/Img/Aventurier/AventurierMarche(1).png" Canvas.Left="460" Canvas.Bottom="50" HorizontalAlignment="Left" VerticalAlignment="Top" Height="240" Width="210"/>
+        <Image x:Name="Aventurier" Source="/Img/Aventurier/AventurierMarche(1).png"
+               Canvas.Left="460" Canvas.Top="600" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Height="240" Width="210"/>
     </Canvas>
 </UserControl>

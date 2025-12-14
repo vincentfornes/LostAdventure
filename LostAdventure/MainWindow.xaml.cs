@@ -60,6 +60,7 @@ namespace LostAdventure
         {
             UCJeu uc = new UCJeu();
             ZoneDeJeu.Content = uc;
+            uc.AttacherEvenementsClavier();
         }
 
         private void deplacementAventurier()

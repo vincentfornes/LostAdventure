@@ -42,10 +42,7 @@ namespace LostAdventure
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-
-            Application.Current.MainWindow.KeyDown += canvasJeu_KeyDown;
-            Application.Current.MainWindow.KeyUp += canvasJeu_KeyUp;
-
+            
         }
 
         public void InitializeSprites()
@@ -54,26 +51,56 @@ namespace LostAdventure
                 spriteAventurier[i] = new BitmapImage(new Uri($"pack://application:,,,/Img/Aventurier/AventurierMarche({i}).png"));
         }
 
+        
+        public void AttacherEvenementsClavier()
+        {
+          
+            if (Application.Current.MainWindow != null)
+            {
+                Application.Current.MainWindow.KeyDown += canvasJeu_KeyDown;
+                Application.Current.MainWindow.KeyUp += canvasJeu_KeyUp;
+                Application.Current.MainWindow.Focus();
+            }
+        }
+
         private void canvasJeu_KeyDown(object sender, KeyEventArgs e)
         {
             double positionLeftAventurier = Canvas.GetLeft(Aventurier);
 
             if (double.IsNaN(positionLeftAventurier))
-                positionLeftAventurier = 0;
+                positionLeftAventurier = 460;
 
             if (e.Key == Key.Q)
-                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)-2);
+                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier) - 10);
+                
+            
             if (e.Key == Key.D)
-                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)+2);
-            #if DEBUG
+                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)+10);
+            
+            if (e.Key == Key.Space)
+            {
+                while (Canvas.GetTop(Aventurier) > 450)
+                {
+                    
+                    Canvas.SetTop(Aventurier, Canvas.GetTop(Aventurier) - 5);
+                }
+            }
+
+#if DEBUG
             Console.WriteLine("Position Left Aventurier :" + Canvas.GetLeft(Aventurier));
             #endif
         }
 
         private void canvasJeu_KeyUp(object sender, KeyEventArgs e)
         {
-           
-           
+           if (e.Key == Key.Space)
+            {
+                while (Canvas.GetTop(Aventurier) < 600)
+                {
+                    Canvas.SetTop(Aventurier, Canvas.GetTop(Aventurier) + 5);
+                }
+            }
+
         }
     }
 }
