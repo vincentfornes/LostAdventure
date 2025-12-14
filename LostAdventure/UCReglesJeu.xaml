@@ -33,9 +33,7 @@
                 Foreground="White"
                 TextAlignment="Center"
                 />
-
         </Label>
     </Grid>
-
 </UserControl>
 
