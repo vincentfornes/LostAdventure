@@ -17,7 +17,8 @@ namespace LostAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Image[] spriteAventurier;
+        private BitmapImage[]  aventurier = new BitmapImage[8];
+        private int nb = 0;
         public Image[] spriteEnnemis;
         public Image[] spriteBoss;
         private DispatcherTimer minuterie;
@@ -35,11 +36,21 @@ namespace LostAdventure
             ZoneDeJeu.Content = ucMainMenu;
         }
 
-        private void InitialiseJeu()
+        public void InitialiseJeu()
         {
             aventurierX = 100;
+            aventurierY = 200;
+            InitializeTimer();
+            InitializeSprites();
         }
 
+        private void Jeu(object sender, EventArgs e)
+        {
+            nb++;
+            if (nb == aventurier.Length)
+                nb= 0;
+            Aventurier.Source = aventurier[nb];
+        }
 
         public void AfficheReglesJeu()
         {
@@ -47,34 +58,24 @@ namespace LostAdventure
             ZoneDeJeu.Content = ucReglesJeu;
         }
 
+        private void deplacementAventurier()
+        {
+        
+        }
+
         private void InitializeTimer()
         {
             minuterie = new DispatcherTimer();
             minuterie.Interval = TimeSpan.FromMilliseconds(16);
-            //minuterie.Tick += ;
+            minuterie.Tick += Jeu;
             minuterie.Start();
         }
 
-
-        private void butJouer_Click(object sender, RoutedEventArgs e)
+        private void InitializeSprites()
         {
-            InitialiseJeu();
+            for (int i = 1; i < aventurier.Length; i++)
+                aventurier[i] = new BitmapImage(new Uri($"/Images/Aventurier/AventurierMarche({i}).png"));
         }
-
-        private void butRegles_Click(object sender, RoutedEventArgs e)
-        {
-            AfficheReglesJeu();
-        }
-
-        private void butTouches_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void butQuitter_Click(object sender, RoutedEventArgs e)
-        {
-            
-		}
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

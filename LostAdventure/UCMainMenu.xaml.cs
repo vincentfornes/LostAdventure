@@ -24,9 +24,10 @@ namespace LostAdventure
 
 		private void butJouer_Click(object sender, RoutedEventArgs e)
 		{
-			// Tu ajouteras ton écran de jeu ici plus tard
-			MessageBox.Show("Lancement du jeu !");
-		}
+			
+			var main = Application.Current.MainWindow as MainWindow;
+			main.InitialiseJeu();
+        }
 
 		private void butRegles_Click(object sender, RoutedEventArgs e)
 		{

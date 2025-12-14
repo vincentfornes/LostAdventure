@@ -9,6 +9,8 @@
     <Window.Background>
         <ImageBrush ImageSource="/Img/1Entree.png"></ImageBrush>
     </Window.Background>
-    <ContentControl x:Name="ZoneDeJeu"/>
+    <ContentControl x:Name="ZoneDeJeu">
+        <Image x:Name="Aventurier" Margin="370,570,1030,60" Source="/Img/Aventurier/AventurierMarche(1).png" Stretch="Fill" RenderTransformOrigin="0.5,0.5"></Image>
+    </ContentControl>
 
 </Window>
