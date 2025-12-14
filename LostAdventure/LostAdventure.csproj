@@ -64,6 +64,7 @@
     <Resource Include="Img\TouchesMenu\TouchesIcones.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Img\TouchesMenu\TouchesIcones.png" />
     <Resource Include="Img\TouchesMenu\TouchesMenu.png" />
     <Resource Include="Police\PressStart2P-Regular.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
