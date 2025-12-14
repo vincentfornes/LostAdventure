@@ -36,7 +36,8 @@ namespace LostAdventure
 
 		private void butTouches_Click(object sender, RoutedEventArgs e)
 		{
-			MessageBox.Show("Touches du jeu (à venir)");
+			var main = Application.Current.MainWindow as MainWindow;
+			main.AfficheTouches();
 		}
 
 		private void butQuitter_Click(object sender, RoutedEventArgs e)
