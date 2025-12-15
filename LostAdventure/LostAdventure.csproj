@@ -9,7 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Img\Ennemis\**" />
+    <EmbeddedResource Remove="Img\Ennemis\**" />
+    <None Remove="Img\Ennemis\**" />
+    <Page Remove="Img\Ennemis\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Img\1Entree.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%281%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%282%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%283%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%284%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%285%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%286%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%287%29.png" />
+    <None Remove="Img\Aventurier\AventurierImmobile.png" />
     <None Remove="Img\Aventurier\AventurierMarche%283%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%284%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%285%29.png" />
@@ -34,6 +49,14 @@
 
   <ItemGroup>
     <Resource Include="Img\1Entree.png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(1).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(2).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(3).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(4).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(5).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(6).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(7).png" />
+    <Resource Include="Img\Aventurier\AventurierImmobile.png" />
     <Resource Include="Img\Aventurier\AventurierMarche%282%29.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -74,10 +97,6 @@
     <Resource Include="Police\PressStart2P-Regular.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Img\Ennemis\" />
   </ItemGroup>
 
 </Project>

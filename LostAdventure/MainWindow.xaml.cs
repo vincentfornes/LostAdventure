@@ -17,8 +17,17 @@ namespace LostAdventure
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+
+        public enum EtatAnimation
+        {
+            Immobile,
+            Marche,
+            Attaque,
+
+        }
 
         private DispatcherTimer minuterie;
 
@@ -104,6 +113,8 @@ namespace LostAdventure
             public double Hauteur { get; protected set; }
 
 
+            
+            
             protected Entite(double x, double y, int vie, int attaque, double vitesse, double largeur, double hauteur)
             {
                 X = x;
@@ -114,6 +125,7 @@ namespace LostAdventure
                 Largeur = largeur;
                 Hauteur = hauteur;
             }
+            
             public virtual void Deplacer(double deltaX, double deltaY)
             {
                 X += deltaX * Vitesse;
@@ -137,10 +149,10 @@ namespace LostAdventure
             }
             public class Aventurier : Entite
             {
+                
+               
 
 
-                
-                
                 public Aventurier(double x, double y)
                     : base(x, y, 100, 10, 5, 64, 64)
                 {
@@ -153,10 +165,35 @@ namespace LostAdventure
                     Y -= hauteurSaut;
                 }
 
+                
+
+                public void Deplacement(double deltaX, double deltaY)
+                {
+                   if (deltaX != 0 || deltaY != 0)
+                    {
+                        //Etat = EtatAnimation.Marche;
+                    }
+                   else
+                    {
+                        //Etat = EtatAnimation.Immobile;
+                    }
 
 
-                
-                
+                    base.Deplacer(deltaX, deltaY);
+                }
+
+                public void Attaquer()
+                {
+                   /* if (Etat != EtatAnimation.Attaque)
+                        Etat = EtatAnimation.Attaque;*/
+                }
+
+                public void FinAttaque()
+                {
+                    //Etat = EtatAnimation.Immobile;
+                }
+
+
                 public class Ennemi : Entite
                 {
                     public Ennemi(double x, double y, int vie, int attaque, double vitesse, double largeur, double hauteur)
@@ -166,6 +203,8 @@ namespace LostAdventure
                         Y = y;
                     }
                 }
+
+               
             }
 
         }

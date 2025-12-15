@@ -22,23 +22,25 @@ namespace LostAdventure
     
     public partial class UCJeu : UserControl
     {
-        private BitmapImage[] spriteAventurier = new BitmapImage[8];
+        private BitmapImage[] spriteAventurierMarche = new BitmapImage[8];
+        private BitmapImage[] spriteAventurierAttaque = new BitmapImage[7];
+        BitmapImage AventurierImmobile = new BitmapImage(new Uri("pack://application:,,,/Img/Aventurier/AventurierImmobile.png"));
         private int nb = 0;
         public Image[] spriteEnnemis;
         public Image[] spriteBoss;
         public UCJeu()
         {
             InitializeComponent();
-            InitializeSprites();
+            
             
         }
 
-        public void Jeu(object sender, EventArgs e)
+        public void BoucleJeu(object sender, EventArgs e)
         {
-            nb++;
-            if (nb == spriteAventurier.Length)
+            
+            if (nb >= spriteAventurierMarche.Length)
                 nb = 0;
-            Aventurier.Source = spriteAventurier[nb];
+            Aventurier.Source = spriteAventurierMarche[nb];
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -46,13 +48,26 @@ namespace LostAdventure
             
         }
 
-        public void InitializeSprites()
+        public void InitializeTimer()
         {
-            for (int i = 1; i < spriteAventurier.Length; i++)
-                spriteAventurier[i] = new BitmapImage(new Uri($"pack://application:,,,/Img/Aventurier/AventurierMarche({i}).png"));
+            System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(16);
+            timer.Tick += BoucleJeu;
+            timer.Start();
         }
 
-        
+        public void InitialiseAnimationMarche()
+        {
+            for (int i = 1; i < spriteAventurierMarche.Length; i++)
+                spriteAventurierMarche[i] = new BitmapImage(new Uri($"pack://application:,,,/Img/Aventurier/AventurierMarche({i}).png"));
+        }
+
+        public void InitialiseAnimationAtttaque()
+        {
+            for (int i = 1; i < spriteAventurierAttaque.Length; i++)
+                spriteAventurierAttaque[i] = new BitmapImage(new Uri($"pack://application:,,,/Img/Aventurier/AventurierAttaque({i}).png"));
+        }   
+
         public void AttacherEvenementsClavier()
         {
           
@@ -87,7 +102,7 @@ namespace LostAdventure
                 }
             }
 
-#if DEBUG
+            #if DEBUG
             Console.WriteLine("Position Left Aventurier :" + Canvas.GetLeft(Aventurier));
             #endif
         }
@@ -101,7 +116,6 @@ namespace LostAdventure
                     Canvas.SetTop(Aventurier, Canvas.GetTop(Aventurier) + 5);
                 }
             }
-
         }
     }
 }
