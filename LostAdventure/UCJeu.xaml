@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
+Focusable="True"
         d:DesignHeight="900" d:DesignWidth="1600">
-    <Canvas>
-        <Image x:Name="Aventurier" Source="/Img/Aventurier/AventurierMarche(1).png" Canvas.Left="460" Canvas.Bottom="50" HorizontalAlignment="Left" VerticalAlignment="Top" Height="240" Width="210"/>
+	<Grid x:Name="RootGrid">
+		<!-- Barre de vie du boss -->
+		<Border x:Name="BossHud"
+                HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                Margin="0" Padding="14" Background="#AA000000"
+                Visibility="Collapsed">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+				<StackPanel Grid.Column="1" Orientation="Vertical" Width="600">
+					<TextBlock x:Name="TxtBossName" Text="Mini-Boss"
+                               Foreground="#FFEE4444" FontWeight="Bold"
+                               FontSize="22" HorizontalAlignment="Center"/>
+					<Grid x:Name="BossBarContainer" Height="20">
+						<Border Background="#55222222" CornerRadius="10"/>
+						<Border x:Name="BossFill" Background="#FFEE4444" CornerRadius="10" Width="600"/>
+						<Border BorderBrush="#88FFFFFF" BorderThickness="1" CornerRadius="10"/>
+					</Grid>
+					<TextBlock x:Name="TxtBossHP" Text="40/40"
+                               Foreground="White" FontSize="14"
+                               HorizontalAlignment="Center"/>
+				</StackPanel>
+			</Grid>
+		</Border>
+
+		<!-- Canvas du jeu -->
+		<Canvas x:Name="JeuCanvas">
+			<Image x:Name="Aventurier"
+                   Canvas.Left="460" Canvas.Top="600"
+                   Width="210" Height="240"/>
     </Canvas>
+
+		<!-- HUD joueur -->
+		<Border HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="10" Padding="10" Background="#AA000000" CornerRadius="8">
+			<StackPanel Orientation="Vertical" Width="260" >
+				<TextBlock Text="HP" Foreground="White" FontWeight="Bold" FontSize="16"/>
+				<Grid x:Name="HpBarContainer" Width="220" Height="18">
+					<Border Background="#55222222" CornerRadius="9"/>
+					<Border x:Name="HpFill" Background="#2EEA4D" CornerRadius="9" Width="220"/>
+					<Border BorderBrush="#88FFFFFF" BorderThickness="1" CornerRadius="9"/>
+				</Grid>
+				<TextBlock x:Name="TxtHP" Text="10/10" Foreground="White" FontSize="14"/>
+
+				<StackPanel Orientation="Horizontal" >
+					<TextBlock Text="Gold:" Foreground="Gold" FontWeight="Bold" FontSize="16"/>
+					<TextBlock x:Name="TxtGold" Text="0" Foreground="White" FontSize="16"/>
+				</StackPanel>
+			</StackPanel>
+		</Border>
+	</Grid>
 </UserControl>
+
