@@ -30,6 +30,7 @@ namespace LostAdventure
         {
             InitializeComponent();
             InitializeSprites();
+            
         }
 
         public void Jeu(object sender, EventArgs e)

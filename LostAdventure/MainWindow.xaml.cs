@@ -19,9 +19,9 @@ namespace LostAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         private DispatcherTimer minuterie;
-        double aventurierX, aventurierY;
+
         bool gauche, droite, saut;
 
         public MainWindow()
@@ -33,18 +33,17 @@ namespace LostAdventure
         {
             UCMainMenu ucMainMenu = new UCMainMenu();
             ZoneDeJeu.Content = ucMainMenu;
-            
+
         }
 
         public void InitialiseJeu()
         {
-            aventurierX = 100;
-            aventurierY = 200;
+
             InitializeTimer();
-           
+
         }
 
-        
+
 
         public void AfficheReglesJeu()
         {
@@ -55,9 +54,9 @@ namespace LostAdventure
         {
             UCTouches ucTouches = new UCTouches();
             ZoneDeJeu.Content = ucTouches;
-		}
+        }
 
-		public void AfficheJeu()
+        public void AfficheJeu()
         {
             UCJeu uc = new UCJeu();
             ZoneDeJeu.Content = uc;
@@ -77,7 +76,7 @@ namespace LostAdventure
             minuterie.Start();
         }
 
-        
+
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -91,6 +90,84 @@ namespace LostAdventure
             if (e.Key == Key.Q) gauche = false;
             if (e.Key == Key.D) droite = false;
             if (e.Key == Key.Space) saut = false;
+        }
+
+
+        public abstract class Entite
+        {
+            public double X { get; protected set; }
+            public double Y { get; protected set; }
+            public int Vie { get; protected set; }
+            public int Attaque { get; protected set; }
+            public double Vitesse { get; protected set; }
+            public double Largeur { get; protected set; }
+            public double Hauteur { get; protected set; }
+
+
+            protected Entite(double x, double y, int vie, int attaque, double vitesse, double largeur, double hauteur)
+            {
+                X = x;
+                Y = y;
+                Vie = vie;
+                Attaque = attaque;
+                Vitesse = vitesse;
+                Largeur = largeur;
+                Hauteur = hauteur;
+            }
+            public virtual void Deplacer(double deltaX, double deltaY)
+            {
+                X += deltaX * Vitesse;
+                Y += deltaY * Vitesse;
+            }
+
+            public void RecevoirDegats(int degats)
+            {
+                Vie -= degats;
+                if (Vie < 0) Vie = 0;
+            }
+
+            public void Attaquer(Entite cible)
+            {
+                cible.RecevoirDegats(Attaque);
+            }
+
+            public bool EstMort
+            {
+                get { return Vie <= 0; }
+            }
+            public class Aventurier : Entite
+            {
+
+
+                
+                
+                public Aventurier(double x, double y)
+                    : base(x, y, 100, 10, 5, 64, 64)
+                {
+                    X = x;
+                    Y = y;
+                }
+
+                public void Sauter(double hauteurSaut)
+                {
+                    Y -= hauteurSaut;
+                }
+
+
+
+                
+                
+                public class Ennemi : Entite
+                {
+                    public Ennemi(double x, double y, int vie, int attaque, double vitesse, double largeur, double hauteur)
+                        : base(x, y, vie, attaque, vitesse, largeur, hauteur)
+                    {
+                        X = x;
+                        Y = y;
+                    }
+                }
+            }
+
         }
     }
 }
