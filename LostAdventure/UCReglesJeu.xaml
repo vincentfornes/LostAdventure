@@ -23,7 +23,7 @@
 
 
 		<TextBlock Text="Lost Adventure est un jeu &#10; d'aventure dans lequel &#10;vous incarnez un chevalier &#10;explorant des ruines perdues. &#10;Vous devez parcourir ces &#10;ruines, franchir des obstacles,&#10;et vaincre des ennemies. &#10; Une surprise vous &#10; attend au bout des ruines ..."
-                FontFamily="#Press Start 2P"
+                FontFamily="{StaticResource PressStart2P}"
                 FontSize="36"
                 Foreground="White"
                 TextAlignment="Center" Margin="502,269,518,240"

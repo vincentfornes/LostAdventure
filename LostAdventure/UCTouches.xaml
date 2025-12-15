@@ -14,9 +14,9 @@
 			</Button.Background>
 		</Button>
 		<Image HorizontalAlignment="Left" Height="250" Margin="835,0,0,0" VerticalAlignment="Center" Width="250" Source="/Img/TouchesMenu/TouchesIcones.png"/>
-        <TextBlock HorizontalAlignment="Left" Margin="510,0,0,0" TextWrapping="Wrap" Text="Les touches de déplacement sont: &#10;&#10; Q -> déplacement vers la gauche &#10;&#10;D -> déplacement vers la droite &#10;&#10;ESPACE -> Sauter &#10;&#10;La touche pour attaquer est:&#10;&#10;Clic Gauche -> attaquer " 
-                   VerticalAlignment="Center" Width="320" Height="359" RenderTransformOrigin="0.502,0.49" 
-                   FontSize="20" FontFamily="#Press Start 2P" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="510,0,0,0" TextWrapping="Wrap" Text="Les touches de déplacement sont: &#10;&#10; Q -> déplacement vers la gauche &#10;&#10;D -> déplacement vers la droite &#10;&#10;ESPACE -> Sauter &#10;&#10;La touche pour attaquer est:&#10;&#10;Clic Gauche -> attaquer "
+                   VerticalAlignment="Center" Width="320" Height="359" RenderTransformOrigin="0.502,0.49"
+                   FontSize="20" FontFamily="{StaticResource PressStart2P}" Foreground="White"/>
 
 
 

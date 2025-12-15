@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C LostAdventure show HEAD:LostAdventure/UCJeu.xaml.cs)",
+      "Bash(ls:*)"
+    ]
+  }
+}

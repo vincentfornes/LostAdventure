@@ -1,12 +1,13 @@
-﻿<UserControl x:Class="LostAdventure.UCJeu"
+<UserControl x:Class="LostAdventure.UCJeu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
-Focusable="True"
-        d:DesignHeight="900" d:DesignWidth="1600">
+        Loaded="UserControl_Loaded"
+        Focusable="True"
+             d:DesignHeight="900" d:DesignWidth="1600">
 	<Grid x:Name="RootGrid">
 		<!-- Barre de vie du boss -->
 		<Border x:Name="BossHud"
@@ -37,11 +38,8 @@ Focusable="True"
 		</Border>
 
 		<!-- Canvas du jeu -->
-		<Canvas x:Name="JeuCanvas">
-			<Image x:Name="Aventurier"
-                   Canvas.Left="460" Canvas.Top="600"
-                   Width="210" Height="240"/>
-    </Canvas>
+		<Canvas x:Name="JeuCanvas" MouseLeftButtonDown="JeuCanvas_MouseLeftButtonDown">
+		</Canvas>
 
 		<!-- HUD joueur -->
 		<Border HorizontalAlignment="Left" VerticalAlignment="Top"
@@ -63,4 +61,3 @@ Focusable="True"
 		</Border>
 	</Grid>
 </UserControl>
-

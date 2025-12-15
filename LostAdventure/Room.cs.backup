@@ -1,0 +1,22 @@
+﻿
+using System.Collections.Generic;
+using System.Windows;
+
+namespace LostAdventureTest
+{
+	public class Room
+	{
+		public string BackgroundUri { get; set; }
+		public List<Point> SpawnPoints { get; } = new();
+
+		public int SmallCount { get; set; }
+		public int MediumCount { get; set; }
+		public int BruteCount { get; set; }
+
+		public bool HasStatue { get; set; } = false;
+		public Point StatuePoint { get; set; } = new Point(1200, 600);
+
+		public Room(string backgroundUri) { BackgroundUri = backgroundUri; }
+	}
+}
+

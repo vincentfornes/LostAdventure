@@ -10,6 +10,12 @@
 
   <ItemGroup>
     <None Remove="Img\1Entree.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%281%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%282%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%283%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%284%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%285%29.png" />
+    <None Remove="Img\Aventurier\AventurierAttaque%286%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%283%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%284%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%285%29.png" />
@@ -21,7 +27,13 @@
     <None Remove="Img\butRegles.png" />
     <None Remove="Img\butTouches.png" />
     <None Remove="Img\CroixMenuRegles.png" />
+    <None Remove="Img\Enemies\BossDragon.png" />
+    <None Remove="Img\Enemies\Gobelin.png" />
     <None Remove="Img\MenuRegles.png" />
+    <None Remove="Img\SalleFond\Salle1.PNG" />
+    <None Remove="Img\SalleFond\Salle2.PNG" />
+    <None Remove="Img\SalleFond\Salle3.PNG" />
+    <None Remove="Img\SalleFond\Salle4.PNG" />
     <None Remove="Img\Statue\butBoutique.png" />
     <None Remove="Img\Statue\butPartir.png" />
     <None Remove="Img\Statue\butSoigner.png" />
@@ -29,11 +41,18 @@
     <None Remove="Img\Titre.png" />
     <None Remove="Img\TouchesMenu\TouchesIcones.png" />
     <None Remove="Img\TouchesMenu\TouchesMenu.png" />
+    <None Remove="nul" />
     <None Remove="Police\PressStart2P-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Img\1Entree.png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(1).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(2).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(3).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(4).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(5).png" />
+    <Resource Include="Img\Aventurier\AventurierAttaque(6).png" />
     <Resource Include="Img\Aventurier\AventurierMarche%282%29.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -65,6 +84,12 @@
     <Resource Include="Img\ReglesMenu\CroixMenuRegles.png" />
     <Resource Include="Img\ReglesMenu\MenuRegles.png" />
     <Resource Include="Img\MainMenu\Titre.png" />
+    <Resource Include="Img\Enemies\BossDragon.png" />
+    <Resource Include="Img\Enemies\Gobelin.png" />
+    <Resource Include="Img\SalleFond\Salle1.PNG" />
+    <Resource Include="Img\SalleFond\Salle2.PNG" />
+    <Resource Include="Img\SalleFond\Salle3.PNG" />
+    <Resource Include="Img\SalleFond\Salle4.PNG" />
     <Resource Include="Img\Statue\butBoutique.png" />
     <Resource Include="Img\Statue\butPartir.png" />
     <Resource Include="Img\Statue\butSoigner.png" />

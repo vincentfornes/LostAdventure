@@ -1,0 +1,10 @@
+	public bool TakeDamage(int damage)
+	{
+		HP -= damage;
+		if (HP < 0) HP = 0;
+		return true;
+	}
+
+	public bool IsAlive => HP > 0;
+
+	public bool IsInvulnerable => false;

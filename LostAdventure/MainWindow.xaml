@@ -5,11 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LostAdventure"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600">
-    <Window.Background>
-        <ImageBrush ImageSource="/Img/1Entree.png"></ImageBrush>
-    </Window.Background>
-    <ContentControl x:Name="ZoneDeJeu">
+        Title="MainWindow" Height="900" Width="1600"
+        WindowStartupLocation="CenterScreen">
+	<ContentControl x:Name="ZoneDeJeu">
         
     </ContentControl>
 
