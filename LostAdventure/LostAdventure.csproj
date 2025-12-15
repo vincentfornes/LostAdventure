@@ -76,4 +76,8 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Img\Ennemis\" />
+  </ItemGroup>
+
 </Project>
