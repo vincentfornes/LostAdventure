@@ -8,10 +8,10 @@
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
     <Canvas>
-        <Image x:Name="Aventurier" Source="/Img/Aventurier/AventurierMarche(1).png"
-               Canvas.Left="460" Canvas.Top="600" 
+        <Image x:Name="Aventurier" Source="{Binding Source}"
+               Canvas.Left="0" Canvas.Top="0" 
                HorizontalAlignment="Left" 
                VerticalAlignment="Top" 
-               Height="240" Width="210"/>
+               Height="{Binding Largeur}" Width="{Binding Hauteur}"/>
     </Canvas>
 </UserControl>

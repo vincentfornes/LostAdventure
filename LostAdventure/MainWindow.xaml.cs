@@ -150,7 +150,7 @@ namespace LostAdventure
             public class Aventurier : Entite
             {
                 
-               
+                public EtatAnimation etat = EtatAnimation.Immobile;
 
 
                 public Aventurier(double x, double y)
@@ -171,11 +171,11 @@ namespace LostAdventure
                 {
                    if (deltaX != 0 || deltaY != 0)
                     {
-                        //Etat = EtatAnimation.Marche;
+                        etat = EtatAnimation.Marche;
                     }
                    else
                     {
-                        //Etat = EtatAnimation.Immobile;
+                        etat = EtatAnimation.Immobile;
                     }
 
 
@@ -184,13 +184,13 @@ namespace LostAdventure
 
                 public void Attaquer()
                 {
-                   /* if (Etat != EtatAnimation.Attaque)
-                        Etat = EtatAnimation.Attaque;*/
+                    if (etat != EtatAnimation.Attaque)
+                        etat = EtatAnimation.Attaque;
                 }
 
                 public void FinAttaque()
                 {
-                    //Etat = EtatAnimation.Immobile;
+                    etat = EtatAnimation.Immobile;
                 }
 
 

@@ -28,19 +28,51 @@ namespace LostAdventure
         private int nb = 0;
         public Image[] spriteEnnemis;
         public Image[] spriteBoss;
+        MainWindow.Entite.Aventurier joueur = new MainWindow.Entite.Aventurier(460, 600);
         public UCJeu()
+        
         {
             InitializeComponent();
-            
-            
+            InitialiseAnimationMarche();
+            InitialiseAnimationAtttaque();
+            InitializeTimer();
+            AttacherEvenementsClavier();
+
+
+        }
+
+        public void SynchroPositionAventurier()
+        {
+            Canvas.SetLeft(Aventurier, joueur.X);
+            Canvas.SetTop(Aventurier, joueur.Y);
+            Aventurier.Width = joueur.Largeur;
+            Aventurier.Height = joueur.Hauteur;
+
+            if (Aventurier.Source == null)
+                Aventurier.Source = AventurierImmobile;
         }
 
         public void BoucleJeu(object sender, EventArgs e)
         {
-            
-            if (nb >= spriteAventurierMarche.Length)
-                nb = 0;
-            Aventurier.Source = spriteAventurierMarche[nb];
+            if (joueur.etat == MainWindow.EtatAnimation.Immobile)
+            {
+                Aventurier.Source = AventurierImmobile;
+                return;
+            }
+            if (joueur.etat == MainWindow.EtatAnimation.Marche)
+            {
+                nb++;
+                if (nb >= spriteAventurierMarche.Length)
+                    nb = 0;
+                Aventurier.Source = spriteAventurierMarche[nb];
+            }
+            if (joueur.etat == MainWindow.EtatAnimation.Attaque)
+            {
+                nb++;
+                if (nb >= spriteAventurierAttaque.Length)
+                    nb = 0;
+                Aventurier.Source = spriteAventurierAttaque[nb];
+            }
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -87,22 +119,18 @@ namespace LostAdventure
                 positionLeftAventurier = 460;
 
             if (e.Key == Key.Q)
-                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier) - 10);
-                
-            
+                joueur.Deplacer(5, 5); 
+
+
             if (e.Key == Key.D)
-                Canvas.SetLeft(Aventurier, Canvas.GetLeft(Aventurier)+10);
+                joueur.Deplacer(5, 5); 
             
             if (e.Key == Key.Space)
-            {
-                while (Canvas.GetTop(Aventurier) > 450)
-                {
-                    
-                    Canvas.SetTop(Aventurier, Canvas.GetTop(Aventurier) - 5);
-                }
-            }
+                joueur.Sauter(5);
 
-            #if DEBUG
+
+
+#if DEBUG
             Console.WriteLine("Position Left Aventurier :" + Canvas.GetLeft(Aventurier));
             #endif
         }
