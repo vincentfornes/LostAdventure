@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,7 +22,7 @@ namespace LostAdventure
         
         private DispatcherTimer minuterie;
         double aventurierX, aventurierY;
-        bool gauche, droite;
+        bool gauche, droite, saut;
 
         public MainWindow()
         {
@@ -80,14 +81,16 @@ namespace LostAdventure
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Q) droite = true;
+            if (e.Key == Key.Q) gauche = true;
             if (e.Key == Key.D) droite = true;
+            if (e.Key == Key.Space) saut = true;
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Q) gauche = false;
             if (e.Key == Key.D) droite = false;
+            if (e.Key == Key.Space) saut = false;
         }
     }
 }
