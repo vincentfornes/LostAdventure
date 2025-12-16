@@ -29,6 +29,7 @@
     <None Remove="Img\Brute\BruteAttaque%285%29.png" />
     <None Remove="Img\Brute\BruteAttaque%286%29.png" />
     <None Remove="Img\Brute\BruteAttaque%287%29.png" />
+    <None Remove="Img\Brute\BruteImmobile.png" />
     <None Remove="Img\butJouer.png" />
     <None Remove="Img\butQuitter.png" />
     <None Remove="Img\butRegles.png" />
@@ -52,7 +53,6 @@
     <None Remove="Img\TouchesMenu\TouchesMenu.png" />
     <None Remove="nul" />
     <None Remove="Police\PressStart2P-Regular.ttf" />
-    <None Remove="Sons\epic-dragon-cry-1-449320.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -94,6 +94,7 @@
     <Resource Include="Img\Brute\BruteAttaque(5).png" />
     <Resource Include="Img\Brute\BruteAttaque(6).png" />
     <Resource Include="Img\Brute\BruteAttaque(7).png" />
+    <Resource Include="Img\Brute\BruteImmobile.png" />
     <Resource Include="Img\MainMenu\butJouer.png" />
     <Resource Include="Img\MainMenu\butQuitter.png" />
     <Resource Include="Img\MainMenu\butRegles.png" />
@@ -118,7 +119,7 @@
     <Resource Include="Police\PressStart2P-Regular.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Sons\epic-dragon-cry-1-449320.mp3" />
+    <Resource Include="Sons\MusiqueDragon.mp3" />
   </ItemGroup>
 
 </Project>

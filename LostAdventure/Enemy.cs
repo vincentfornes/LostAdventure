@@ -63,32 +63,58 @@ namespace LostAdventureTest
 					}
 					catch
 					{
-						// Fallback if image doesn't load
+						// L'image ne s'est pas chargé
 					}
 					break;
-			case EnemyType.Boss:
-				HP = 50;
-				MaxHP = 50;
-				Speed = 0.4;
-				Damage = 5;
-				GoldReward = 20;
-				GoldPerHit = 2;
-				Sprite.Width = 600;
-				Sprite.Height = 600;
-				try
-				{
-					var bitmap = new BitmapImage();
-					bitmap.BeginInit();
-					bitmap.UriSource = new Uri("pack://application:,,,/Img/Enemies/BossDragon.png", UriKind.Absolute);
-					bitmap.CacheOption = BitmapCacheOption.OnLoad;
-					bitmap.EndInit();
-					Sprite.Source = bitmap;
-				}
-				catch
-				{
-					// Fallback if image doesn't load
-				}
-				break;
+
+				case EnemyType.Brute:
+					HP = 20;
+					MaxHP = 20;
+					Speed = 0.5;
+					Damage = 5;
+					GoldReward = 7;
+					GoldPerHit = 1;
+					Sprite.Width = 500;
+					Sprite.Height = 500;
+					try
+					{
+						var bitmap = new BitmapImage();
+						bitmap.BeginInit();
+						bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteImmobile.png", UriKind.Absolute);
+						bitmap.CacheOption = BitmapCacheOption.OnLoad;
+						bitmap.EndInit();
+						Sprite.Source = bitmap;
+					}
+					catch
+					{
+						// L'image ne s'est pas chargé
+					}
+					break;
+
+
+                case EnemyType.Boss:
+					HP = 50;
+					MaxHP = 50;
+					Speed = 0.4;
+					Damage = 5;
+					GoldReward = 20;
+					GoldPerHit = 2;
+					Sprite.Width = 600;
+					Sprite.Height = 600;
+					try
+					{
+						var bitmap = new BitmapImage();
+						bitmap.BeginInit();
+						bitmap.UriSource = new Uri("pack://application:,,,/Img/Enemies/BossDragon.png", UriKind.Absolute);
+						bitmap.CacheOption = BitmapCacheOption.OnLoad;
+						bitmap.EndInit();
+						Sprite.Source = bitmap;
+					}
+					catch
+					{
+						//L'image ne s'est pas chargé
+					}
+					break;
 			}
 		}
 
@@ -111,8 +137,15 @@ namespace LostAdventureTest
 			// Larger attack hitbox for goblins (400x400 sprite) - positioned in center/bottom
 			return new Rect(X + 100, Y + 250, 200, 150);
 		}
-		// Other enemies: 60x60 hitbox centered (instead of 100x100 full sprite)
-		return new Rect(X + 20, Y + 20, 60, 60);
+
+		else if (Type == EnemyType.Brute)
+			{
+				return new Rect(X + 100, Y + 200, 300, 200);
+            }
+
+
+                // Other enemies: 60x60 hitbox centered (instead of 100x100 full sprite)
+                return new Rect(X + 20, Y + 20, 60, 60);
 	}
 	}
 }

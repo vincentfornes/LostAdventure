@@ -42,24 +42,30 @@ namespace LostAdventureTest
 
 			var room1 = new Room(backgrounds[0], "entrance")
 			{
-				GoblinCount = 3
-			};
+				GoblinCount = 3,
+				BruteCount = 1,
+				HasStatue = true
+            };
 
 			var room2 = new Room(backgrounds[1], "room2")
 			{
-				GoblinCount = 5
-			};
+				GoblinCount = 5,
+				BruteCount = 2,
+				HasStatue = true
+            };
 
 			var room3 = new Room(backgrounds[2], "room3")
 			{
 				GoblinCount = 4,
-				HasStatue = true
+				BruteCount = 3,
+                HasStatue = true
 			};
 
 			var room4 = new Room(backgrounds[3], "room4")
 			{
 				GoblinCount = 0,
-			BossCount = 1
+				BruteCount = 0,
+                BossCount = 1
 			};
 
 			room1.RightRoom = room2;

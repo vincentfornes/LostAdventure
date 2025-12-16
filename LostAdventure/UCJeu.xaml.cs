@@ -88,7 +88,7 @@ namespace LostAdventure
 
 					interactionText = new TextBlock
 					{
-						Text = "Press E to interact",
+						Text = "Appuyez sur E pour intéragir",
 						Foreground = Brushes.White,
 						FontSize = 18,
 						FontWeight = FontWeights.Bold,
@@ -231,7 +231,7 @@ namespace LostAdventure
 				if (enemy.HealthBarContainer != null && enemy.HealthBarFill != null)
 				{
 					// Center health bar above enemy sprite
-				double healthBarX = enemy.Type == EnemyType.Boss ? enemy.X + 270 : (enemy.Type == EnemyType.Goblin ? enemy.X + 170 : enemy.X + 20);
+					double healthBarX = enemy.Type == EnemyType.Boss ? enemy.X + 270 : (enemy.Type == EnemyType.Goblin ? enemy.X + 170 : enemy.X + 20);
 					double healthBarY = enemy.Type == EnemyType.Goblin ? enemy.Y - 10 : enemy.Y - 10;
 
 					Canvas.SetLeft(enemy.HealthBarContainer, healthBarX);
