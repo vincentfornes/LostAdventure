@@ -4,10 +4,10 @@ using System.Text;
 
 namespace LostAdventureTest
 {
-	public enum EnemyType
-	{
-		Goblin,
-		Brute,
+    public enum EnemyType
+    {
+        Goblin,
+        Brute,
         Boss
-	}
+    }
 }

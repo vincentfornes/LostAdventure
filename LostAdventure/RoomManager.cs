@@ -28,7 +28,7 @@ namespace LostAdventureTest
 		private void ShuffleBackgrounds()
 		{
 			// random background entre les 6
-			for (int i = backgrounds.Length - 1; i > 0; i--)
+			for (int i = backgrounds.Length-1 ; i > 0; i--)
 			{
 				int j = random.Next(i + 1);
 				string temp = backgrounds[i];
@@ -45,14 +45,14 @@ namespace LostAdventureTest
 			var room1 = new Room(backgrounds[0], "entrance")
 			{
 				GoblinCount = 3,
-				BruteCount = 1,
+				
 				HasStatue = true
             };
 
 			var room2 = new Room(backgrounds[1], "room2")
 			{
 				GoblinCount = 5,
-				BruteCount = 2,
+				
 				HasStatue = true
             };
 
@@ -67,14 +67,15 @@ namespace LostAdventureTest
 			{
 				GoblinCount = 0,
 				BruteCount = 1,
-				HasStatue = true
+                HasStatue = true
 
             };
 
 			var room5 = new Room(backgrounds[4], "room5")
 			{
 				BruteCount = 0,
-				BossCount = 1
+				BossCount = 1,
+				HasStatue = true
 			};
 
 			var room6 = new Room(backgrounds[5], "room6")
