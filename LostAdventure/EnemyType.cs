@@ -7,6 +7,7 @@ namespace LostAdventureTest
 	public enum EnemyType
 	{
 		Goblin,
-		Boss
+		Brute,
+        Boss
 	}
 }

@@ -88,7 +88,7 @@ namespace LostAdventure
 
 					interactionText = new TextBlock
 					{
-						Text = "Press E to interact",
+						Text = "Appuyez sur E pour intéragir",
 						Foreground = Brushes.White,
 						FontSize = 18,
 						FontWeight = FontWeights.Bold,
