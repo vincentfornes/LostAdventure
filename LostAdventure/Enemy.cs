@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -9,7 +10,16 @@ namespace LostAdventureTest
 	public class Enemy
 	{
 		public EnemyType Type { get; set; }
-		public Image Sprite { get; set; }
+		
+		
+
+        public enum EtatBoss
+		{
+			BouleDeDeu,
+            Griffure
+        }
+
+        public Image Sprite { get; set; }
 		public SpriteAnimator? Animator { get; set; }
 
 		public double X { get; set; }
@@ -27,11 +37,20 @@ namespace LostAdventureTest
 
 		public bool IsAlive => HP > 0;
 
-		public Enemy(EnemyType type, double x, double y)
+		public bool JoueurDansPortee(Player player)
+		{
+			Rect enemyHitbox = GetHitbox();
+			Rect playerHitbox = new Rect(player.X, player.Y, player.Sprite.Width, player.Sprite.Height);
+			return enemyHitbox.IntersectsWith(playerHitbox);
+        }
+
+        public Enemy(EnemyType type, double x, double y)
 		{
 			Type = type;
 			X = x;
 			Y = y;
+
+			
 
 			Sprite = new Image
 			{
@@ -67,30 +86,36 @@ namespace LostAdventureTest
 					}
 					break;
 
+
 				case EnemyType.Brute:
-					HP = 20;
-					MaxHP = 20;
-					Speed = 0.5;
+					HP = 40;
+                    MaxHP = 50;
+					Speed = 3.0;
 					Damage = 5;
-					GoldReward = 7;
+					GoldReward = 30;
 					GoldPerHit = 1;
 					Sprite.Width = 500;
 					Sprite.Height = 500;
-					try
-					{
-						var bitmap = new BitmapImage();
-						bitmap.BeginInit();
-						bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteImmobile.png", UriKind.Absolute);
-						bitmap.CacheOption = BitmapCacheOption.OnLoad;
-						bitmap.EndInit();
-						Sprite.Source = bitmap;
-					}
-					catch
-					{
-						// L'image ne s'est pas chargé
-					}
-					break;
 
+                    try
+                    {
+                        var bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteImmobile.png", UriKind.Absolute);
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+                        Sprite.Source = bitmap;
+                    }
+                    catch
+                    {
+                        // L'image ne s'est pas chargé
+                    }
+                    break;
+
+
+
+
+                    break; 
 
                 case EnemyType.Boss:
 					HP = 50;
