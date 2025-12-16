@@ -36,7 +36,22 @@
     <None Remove="Img\butTouches.png" />
     <None Remove="Img\CroixMenuRegles.png" />
     <None Remove="Img\Enemies\BossDragon.png" />
+    <None Remove="Img\Enemies\BouleDeFeu.png" />
     <None Remove="Img\Enemies\Gobelin.png" />
+    <None Remove="Img\Enemies\Griffure%281%29.png" />
+    <None Remove="Img\Enemies\Griffure%2810%29.png" />
+    <None Remove="Img\Enemies\Griffure%2811%29.png" />
+    <None Remove="Img\Enemies\Griffure%2812%29.png" />
+    <None Remove="Img\Enemies\Griffure%2813%29.png" />
+    <None Remove="Img\Enemies\Griffure%2814%29.png" />
+    <None Remove="Img\Enemies\Griffure%282%29.png" />
+    <None Remove="Img\Enemies\Griffure%283%29.png" />
+    <None Remove="Img\Enemies\Griffure%284%29.png" />
+    <None Remove="Img\Enemies\Griffure%285%29.png" />
+    <None Remove="Img\Enemies\Griffure%286%29.png" />
+    <None Remove="Img\Enemies\Griffure%287%29.png" />
+    <None Remove="Img\Enemies\Griffure%288%29.png" />
+    <None Remove="Img\Enemies\Griffure%289%29.png" />
     <None Remove="Img\MenuRegles.png" />
     <None Remove="Img\SalleFond\Salle1.PNG" />
     <None Remove="Img\SalleFond\Salle2.PNG" />
@@ -53,6 +68,23 @@
     <None Remove="Img\TouchesMenu\TouchesMenu.png" />
     <None Remove="nul" />
     <None Remove="Police\PressStart2P-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\Enemies\Griffure(1).png" />
+    <Resource Include="Img\Enemies\Griffure(10).png" />
+    <Resource Include="Img\Enemies\Griffure(11).png" />
+    <Resource Include="Img\Enemies\Griffure(12).png" />
+    <Resource Include="Img\Enemies\Griffure(13).png" />
+    <Resource Include="Img\Enemies\Griffure(14).png" />
+    <Resource Include="Img\Enemies\Griffure(2).png" />
+    <Resource Include="Img\Enemies\Griffure(3).png" />
+    <Resource Include="Img\Enemies\Griffure(4).png" />
+    <Resource Include="Img\Enemies\Griffure(5).png" />
+    <Resource Include="Img\Enemies\Griffure(6).png" />
+    <Resource Include="Img\Enemies\Griffure(7).png" />
+    <Resource Include="Img\Enemies\Griffure(8).png" />
+    <Resource Include="Img\Enemies\Griffure(9).png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -95,6 +127,7 @@
     <Resource Include="Img\Brute\BruteAttaque(6).png" />
     <Resource Include="Img\Brute\BruteAttaque(7).png" />
     <Resource Include="Img\Brute\BruteImmobile.png" />
+    <Resource Include="Img\Enemies\BouleDeFeu.png" />
     <Resource Include="Img\MainMenu\butJouer.png" />
     <Resource Include="Img\MainMenu\butQuitter.png" />
     <Resource Include="Img\MainMenu\butRegles.png" />

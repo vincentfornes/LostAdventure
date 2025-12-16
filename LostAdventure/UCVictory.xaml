@@ -11,14 +11,16 @@
 			           Foreground="Gold"
 			           FontSize="100"
 			           FontWeight="Bold"
+                       FontFamily="Police\#Press Start 2P"
 			           HorizontalAlignment="Center"
 			           Margin="0,0,0,30"/>
 
 			<TextBlock Text="Vous avez battu le dragon !"
 			           Foreground="White"
 			           FontSize="30"
+                       FontFamily="Police\#Press Start 2P"
 			           HorizontalAlignment="Center"
-			           Margin="0,0,0,50"/>
+			           Margin="0,0,0,50" Height="68"/>
 
 			<Button x:Name="butRestart"
 			        Content="REJOUER"
@@ -26,6 +28,7 @@
 			        Height="80"
 			        FontSize="30"
 			        FontWeight="Bold"
+                    FontFamily="Police\#Press Start 2P"
 			        Margin="0,20"
 			        Click="butRestart_Click"
 			        Background="#FFD700"
@@ -37,6 +40,7 @@
 			        Height="80"
 			        FontSize="30"
 			        FontWeight="Bold"
+                    FontFamily="Police\#Press Start 2P"
 			        Margin="0,20"
 			        Click="butLeave_Click"
 			        Background="#444444"
