@@ -8,13 +8,12 @@
         Title="MainWindow" Height="900" Width="1600"
         WindowStartupLocation="CenterScreen">
 
-        <!--
-        <Window.Background>
-            <ImageBrush ImageSource="/Img/1Entree.png" Stretch="Fill"
-        </Window.Background>
-    -->
+     
     <ContentControl x:Name="ZoneDeJeu">
         
     </ContentControl>
-
+    <Window.Background>
+        <ImageBrush ImageSource="/Img/1Entree.png" Stretch="Fill"></ImageBrush>
+    </Window.Background>
+        
 </Window>
