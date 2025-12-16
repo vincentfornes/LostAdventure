@@ -75,12 +75,14 @@ namespace LostAdventure
 			backgroundImage.Width = JeuCanvas.ActualWidth > 0 ? JeuCanvas.ActualWidth : 1600;
 			backgroundImage.Height = JeuCanvas.ActualHeight > 0 ? JeuCanvas.ActualHeight : 900;
 
+
 			// Handle statue
 			if (room.HasStatue)
 			{
 				if (statueImage == null)
 				{
-					statueImage = new Image
+					
+                    statueImage = new Image
 					{
 						Width = 200,
 						Height = 300,
@@ -113,6 +115,7 @@ namespace LostAdventure
 
             if (room.CoffrePresent)
             {
+				
                 if (coffreImage == null)
                 {
                     coffreImage = new Image
@@ -271,8 +274,46 @@ namespace LostAdventure
 
 				LoadRoom(newRoom);
 			}
+            // ===== Détection statue =====
+            isNearStatue = false;
+            isNearCoffre = false;
 
-			foreach (var enemy in activeEnemies.ToList())
+            if (roomManager.CurrentRoom.HasStatue && statueImage != null)
+            {
+                double distStatue = Math.Abs(player.X - roomManager.CurrentRoom.StatuePoint.X);
+                isNearStatue = distStatue < 150;
+            }
+
+            if (roomManager.CurrentRoom.CoffrePresent && coffreImage != null)
+            {
+                double distCoffre = Math.Abs(player.X - roomManager.CurrentRoom.StatuePoint.X);
+                isNearCoffre = distCoffre < 150;
+            }
+
+            // ===== Affichage du texte =====
+            if (interactionText != null)
+            {
+                if (isNearStatue)
+                {
+                    interactionText.Text = "Appuyez sur E pour intéragir";
+                    interactionText.Visibility = Visibility.Visible;
+                    Canvas.SetLeft(interactionText, roomManager.CurrentRoom.StatuePoint.X - 50);
+                    Canvas.SetTop(interactionText, roomManager.CurrentRoom.StatuePoint.Y - 40);
+                }
+                else if (isNearCoffre)
+                {
+                    interactionText.Text = "Appuyez sur E pour ouvrir le coffre";
+                    interactionText.Visibility = Visibility.Visible;
+                    Canvas.SetLeft(interactionText, roomManager.CurrentRoom.StatuePoint.X - 80);
+                    Canvas.SetTop(interactionText, roomManager.CurrentRoom.StatuePoint.Y - 40);
+                }
+                else
+                {
+                    interactionText.Visibility = Visibility.Collapsed;
+                }
+            }
+
+            foreach (var enemy in activeEnemies.ToList())
 			{
 				// les enemies avance vers le joueur
 				if (enemy.X < player.X)
@@ -341,27 +382,45 @@ namespace LostAdventure
 					}
 				}
 
-				// check la proximité avec la statue
-				if (roomManager.CurrentRoom.HasStatue && statueImage != null)
+			/*if (roomManager.CurrentRoom.CoffrePresent && coffreImage != null)
+			{
+				double distanceToCoffre = Math.Abs(player.X - roomManager.CurrentRoom.StatuePoint.X);
+				isNearCoffre = distanceToCoffre < 150;
+				if (isNearCoffre && interactionText != null)
 				{
-					double distanceToStatue = Math.Abs(player.X - roomManager.CurrentRoom.StatuePoint.X);
-					isNearStatue = distanceToStatue < 150;
-
-					if (isNearStatue && interactionText != null)
-					{
-						interactionText.Visibility = Visibility.Visible;
-						Canvas.SetLeft(interactionText, roomManager.CurrentRoom.StatuePoint.X - 50);
-						Canvas.SetTop(interactionText, roomManager.CurrentRoom.StatuePoint.Y - 40);
-					}
-					else if (interactionText != null)
-					{
-						interactionText.Visibility = Visibility.Collapsed;
-					}
+					interactionText.Text = "Appuyez sur E pour ouvrir le coffre";
+					interactionText.Visibility = Visibility.Visible;
+					Canvas.SetLeft(interactionText, roomManager.CurrentRoom.StatuePoint.X - 80);
+					Canvas.SetTop(interactionText, roomManager.CurrentRoom.StatuePoint.Y - 40);
 				}
-
-				UpdateHUD();
+				else if (!isNearStatue && interactionText != null)
+				{
+					interactionText.Visibility = Visibility.Collapsed;
+				}
 			}
-		}
+
+			// check la proximité avec la statue
+			if (roomManager.CurrentRoom.HasStatue && statueImage != null)
+			{
+				double distanceToStatue = Math.Abs(player.X - roomManager.CurrentRoom.StatuePoint.X);
+				isNearStatue = distanceToStatue < 150;
+
+				if (isNearStatue && interactionText != null)
+				{
+					interactionText.Visibility = Visibility.Visible;
+					Canvas.SetLeft(interactionText, roomManager.CurrentRoom.StatuePoint.X - 50);
+					Canvas.SetTop(interactionText, roomManager.CurrentRoom.StatuePoint.Y - 40);
+				}
+				else if (interactionText != null)
+				{
+					interactionText.Visibility = Visibility.Collapsed;
+				}
+			}*/
+
+			UpdateHUD();
+		}	
+	}
+
 
 		private void UpdateHUD()
 		{
@@ -387,11 +446,10 @@ namespace LostAdventure
 				player.Jump();
 			else if (e.Key == Key.LeftShift || e.Key == Key.RightShift)
 				player.StartDodge();
-			else if (e.Key == Key.E )
-				if (isNearStatue)
-					OpenStatueMenu();
-                else if (isNearCoffre)
-					OpenVictory();
+            else if (e.Key == Key.E && isNearStatue)
+                OpenStatueMenu();
+            else if (e.Key == Key.E && isNearCoffre)
+				OpenVictory();
         }
 
 		private void canvasJeu_KeyUp(object sender, KeyEventArgs e)
@@ -457,7 +515,6 @@ namespace LostAdventure
 		private void OpenVictory()
         {
             gameTimer.Stop();
-
             var victoryScreen = new UCVictory();
             RootGrid.Children.Add(victoryScreen);
             Panel.SetZIndex(victoryScreen, 2000);

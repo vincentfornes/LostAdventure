@@ -11,7 +11,7 @@
     <Grid>
 
         <Image Source="/Img/MainMenu/Titre.png" Margin="490,50,490,490"></Image>
-
+        
         <Button x:Name="butJouer"
                 HorizontalAlignment="Center"
                 Margin="0,450,0,0"
@@ -48,7 +48,7 @@
             <Image Source="/Img/MainMenu/butQuitter.png" Stretch="Fill"/>
         </Button>
 
-
+        
     </Grid>
 </UserControl>
 

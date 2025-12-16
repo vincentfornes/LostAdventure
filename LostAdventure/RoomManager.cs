@@ -45,7 +45,6 @@ namespace LostAdventureTest
 			var room1 = new Room(backgrounds[0], "entrance")
 			{
 				GoblinCount = 3,
-				
 				HasStatue = true
             };
 
@@ -81,7 +80,8 @@ namespace LostAdventureTest
 			var room6 = new Room(backgrounds[5], "room6")
 			{
 				BossCount = 0,
-				CoffrePresent = true
+				HasStatue = false,
+                CoffrePresent = true
             };
 
 

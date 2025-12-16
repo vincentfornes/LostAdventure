@@ -22,11 +22,11 @@
 		</Button>
 
 
-		<TextBlock Text="Lost Adventure est un jeu &#10; d'aventure dans lequel &#10;vous incarnez un chevalier &#10;explorant des ruines perdues. &#10;Vous devez parcourir ces &#10;ruines, franchir des obstacles,&#10;et vaincre des ennemies. &#10; Une surprise vous &#10; attend au bout des ruines ..."
+        <TextBlock Text="Lost Adventure est un jeu &#10; d'aventure dans lequel &#10;vous incarnez un chevalier &#10;explorant des ruines perdues. &#10;Vous devez parcourir ces &#10;ruines,et vaincre des ennemies. &#10;Sur votre chemin, vous &#10;rencontrerez des statues&#10;qui vous permettront&#10; d'augmenter vos statistiques &#10; en échange de GOLD que vous &#10; gagnerez en venant à bout &#10; des ennemis. &#10;Une surprise vous &#10; attend au bout des ruines ..."
                 FontFamily="Police\#Press Start 2P"
                 FontSize="19"
                 Foreground="White"
-                TextAlignment="Center" Margin="506,361,514,148"
+                TextAlignment="Center" Margin="496,327,524,182"
                 />
 
 	</Grid>

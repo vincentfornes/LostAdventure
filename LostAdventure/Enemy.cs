@@ -88,7 +88,7 @@ namespace LostAdventureTest
 
 
 				case EnemyType.Brute:
-					HP = 40;
+					HP = 35;
                     MaxHP = 50;
 					Speed = 3.0;
 					Damage = 5;

@@ -22,13 +22,6 @@
     <None Remove="Img\Aventurier\AventurierMarche%286%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%287%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%288%29.png" />
-    <None Remove="Img\Brute\BruteAttaque%281%29.png" />
-    <None Remove="Img\Brute\BruteAttaque%282%29.png" />
-    <None Remove="Img\Brute\BruteAttaque%283%29.png" />
-    <None Remove="Img\Brute\BruteAttaque%284%29.png" />
-    <None Remove="Img\Brute\BruteAttaque%285%29.png" />
-    <None Remove="Img\Brute\BruteAttaque%286%29.png" />
-    <None Remove="Img\Brute\BruteAttaque%287%29.png" />
     <None Remove="Img\Brute\BruteImmobile.png" />
     <None Remove="Img\butJouer.png" />
     <None Remove="Img\butQuitter.png" />
@@ -37,22 +30,7 @@
     <None Remove="Img\Coffre.png" />
     <None Remove="Img\CroixMenuRegles.png" />
     <None Remove="Img\Enemies\BossDragon.png" />
-    <None Remove="Img\Enemies\BouleDeFeu.png" />
     <None Remove="Img\Enemies\Gobelin.png" />
-    <None Remove="Img\Enemies\Griffure%281%29.png" />
-    <None Remove="Img\Enemies\Griffure%2810%29.png" />
-    <None Remove="Img\Enemies\Griffure%2811%29.png" />
-    <None Remove="Img\Enemies\Griffure%2812%29.png" />
-    <None Remove="Img\Enemies\Griffure%2813%29.png" />
-    <None Remove="Img\Enemies\Griffure%2814%29.png" />
-    <None Remove="Img\Enemies\Griffure%282%29.png" />
-    <None Remove="Img\Enemies\Griffure%283%29.png" />
-    <None Remove="Img\Enemies\Griffure%284%29.png" />
-    <None Remove="Img\Enemies\Griffure%285%29.png" />
-    <None Remove="Img\Enemies\Griffure%286%29.png" />
-    <None Remove="Img\Enemies\Griffure%287%29.png" />
-    <None Remove="Img\Enemies\Griffure%288%29.png" />
-    <None Remove="Img\Enemies\Griffure%289%29.png" />
     <None Remove="Img\MenuRegles.png" />
     <None Remove="Img\SalleFond\Salle1.PNG" />
     <None Remove="Img\SalleFond\Salle2.PNG" />
@@ -66,30 +44,19 @@
     <None Remove="Img\TouchesMenu\TouchesMenu.png" />
     <None Remove="nul" />
     <None Remove="Police\PressStart2P-Regular.ttf" />
+    <None Remove="Sons\MusiqueBrute.mp3" />
+    <None Remove="Sons\MusiquePremièresSalle.mp3" />
+    <None Remove="Sons\MusiqueVictoire.mp3" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Img\Coffre.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Img\Enemies\Griffure(1).png" />
-    <Resource Include="Img\Enemies\Griffure(10).png" />
-    <Resource Include="Img\Enemies\Griffure(11).png" />
-    <Resource Include="Img\Enemies\Griffure(12).png" />
-    <Resource Include="Img\Enemies\Griffure(13).png" />
-    <Resource Include="Img\Enemies\Griffure(14).png" />
-    <Resource Include="Img\Enemies\Griffure(2).png" />
-    <Resource Include="Img\Enemies\Griffure(3).png" />
-    <Resource Include="Img\Enemies\Griffure(4).png" />
-    <Resource Include="Img\Enemies\Griffure(5).png" />
-    <Resource Include="Img\Enemies\Griffure(6).png" />
-    <Resource Include="Img\Enemies\Griffure(7).png" />
-    <Resource Include="Img\Enemies\Griffure(8).png" />
-    <Resource Include="Img\Enemies\Griffure(9).png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Img\1Entree.png" />
+    <Resource Include="Img\MainMenu\1Entree.png" />
 	<Resource Include="Img\Aventurier\AventurierAttaque(1).png" />
 	<Resource Include="Img\Aventurier\AventurierAttaque(2).png" />
 	<Resource Include="Img\Aventurier\AventurierAttaque(3).png" />
@@ -120,15 +87,7 @@
     <Resource Include="Img\Aventurier\AventurierMarche(8).png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Img\Brute\BruteAttaque(1).png" />
-    <Resource Include="Img\Brute\BruteAttaque(2).png" />
-    <Resource Include="Img\Brute\BruteAttaque(3).png" />
-    <Resource Include="Img\Brute\BruteAttaque(4).png" />
-    <Resource Include="Img\Brute\BruteAttaque(5).png" />
-    <Resource Include="Img\Brute\BruteAttaque(6).png" />
-    <Resource Include="Img\Brute\BruteAttaque(7).png" />
     <Resource Include="Img\Brute\BruteImmobile.png" />
-    <Resource Include="Img\Enemies\BouleDeFeu.png" />
     <Resource Include="Img\MainMenu\butJouer.png" />
     <Resource Include="Img\MainMenu\butQuitter.png" />
     <Resource Include="Img\MainMenu\butRegles.png" />
@@ -153,7 +112,18 @@
     <Resource Include="Police\PressStart2P-Regular.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Sons\MusiqueDragon.mp3" />
+    <Resource Include="Sons\MusiqueBrute.mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Sons\MusiqueDragon.mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Sons\MusiquePremièresSalle.mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Sons\MusiqueVictoire.mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
