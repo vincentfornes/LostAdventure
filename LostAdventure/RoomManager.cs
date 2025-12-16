@@ -59,7 +59,7 @@ namespace LostAdventureTest
 				GoblinCount = 4,
 				BruteCount = 3,
                 HasStatue = true
-			};
+			};3333333
 
 			var room4 = new Room(backgrounds[3], "room4")
 			{

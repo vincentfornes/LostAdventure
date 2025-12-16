@@ -56,9 +56,6 @@
     <None Remove="Img\SalleFond\Salle1.PNG" />
     <None Remove="Img\SalleFond\Salle2.PNG" />
     <None Remove="Img\SalleFond\Salle3.PNG" />
-    <None Remove="Img\SalleFond\Salle4.PNG" />
-    <None Remove="Img\SalleFond\SalleBonus1.png" />
-    <None Remove="Img\SalleFond\SalleBonus2.png" />
     <None Remove="Img\Statue\butBoutique.png" />
     <None Remove="Img\Statue\butPartir.png" />
     <None Remove="Img\Statue\butSoigner.png" />
@@ -140,9 +137,9 @@
     <Resource Include="Img\SalleFond\Salle1.PNG" />
     <Resource Include="Img\SalleFond\Salle2.PNG" />
     <Resource Include="Img\SalleFond\Salle3.PNG" />
-    <Resource Include="Img\SalleFond\Salle4.PNG" />
-    <Resource Include="Img\SalleFond\SalleBonus1.png" />
-    <Resource Include="Img\SalleFond\SalleBonus2.png" />
+    <Resource Include="Img\SalleFond\Salle5.PNG" />
+    <Resource Include="Img\SalleFond\Salle4.png" />
+    <Resource Include="Img\SalleFond\Salle6.png" />
     <Resource Include="Img\Statue\butBoutique.png" />
     <Resource Include="Img\Statue\butPartir.png" />
     <Resource Include="Img\Statue\butSoigner.png" />
