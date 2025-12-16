@@ -17,10 +17,17 @@ namespace LostAdventure
 {
 	public partial class UCMainMenu : UserControl
 	{
-		public UCMainMenu()
+        public static MediaPlayer musiqueDeFond = new MediaPlayer();
+        public static double nivSon = 50;
+        public static double GetNivSon()
+        {
+            return nivSon;
+        }
+        public UCMainMenu()
 		{
 			InitializeComponent();
-		}
+			InitMusiqueDeFond();
+        }
 
 		private void butJouer_Click(object sender, RoutedEventArgs e)
 		{
@@ -44,6 +51,29 @@ namespace LostAdventure
 		{
 			Application.Current.Shutdown();
 		}
-	}
+        private void butParametres_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            main.AfficheParametres();
+        }
+
+
+        public void InitMusiqueDeFond()
+		{
+			if (musiqueDeFond != null)
+			{
+                musiqueDeFond.Open(new Uri("Sons/MusiquePremièreSalle.mp3", UriKind.Relative));
+                musiqueDeFond.Volume = nivSon / 100;
+                musiqueDeFond.Play();
+                musiqueDeFond.MediaEnded += (s, e) => musiqueDeFond.Position = TimeSpan.Zero;
+                 
+            }
+            
+        }
+
+
+
+        
+    }
 }
 

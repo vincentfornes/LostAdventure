@@ -1,9 +1,11 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace LostAdventure
 {
 	public partial class MainWindow : Window
 	{
+		
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -29,5 +31,11 @@ namespace LostAdventure
 		{
 			ZoneDeJeu.Content = new UCJeu();
 		}
-	}
+		public void AfficheParametres()
+		{
+			ZoneDeJeu.Content = new UCParamètres();
+        }
+
+        
+    }
 }

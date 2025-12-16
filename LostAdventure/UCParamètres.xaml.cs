@@ -23,6 +23,37 @@ namespace LostAdventure
         public UCParamètres()
         {
             InitializeComponent();
+            slidSon.Value = UCMainMenu.nivSon;
+            slidSon.ValueChanged += SlidSon_ValueChanged;
+        }
+
+        private void TailleFenetre_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Window.GetWindow(this);
+            if (mainWindow != null)
+            {
+                
+                if (mainWindow.WindowState == WindowState.Normal)
+                {
+                    mainWindow.WindowState = WindowState.Maximized;
+                }
+                else
+                {
+                    mainWindow.WindowState = WindowState.Normal;
+                }
+            }
+
+        }
+        private void SlidSon_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UCMainMenu.nivSon = slidSon.Value;
+            UCMainMenu.musiqueDeFond.Volume = UCMainMenu.nivSon / 100;
+        }
+
+        private void butQuitterParamètres_Click(object sender, RoutedEventArgs e)
+        {
+            var main = Application.Current.MainWindow as MainWindow;
+            main?.AfficheMainMenu();
         }
     }
 }
