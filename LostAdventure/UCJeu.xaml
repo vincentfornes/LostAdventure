@@ -9,33 +9,7 @@
         Focusable="True"
              d:DesignHeight="900" d:DesignWidth="1600">
 	<Grid x:Name="RootGrid">
-		<!-- Barre de vie du boss -->
-		<Border x:Name="BossHud"
-                HorizontalAlignment="Stretch" VerticalAlignment="Top"
-                Margin="0" Padding="14" Background="#AA000000"
-                Visibility="Collapsed">
-			<Grid>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
-
-				<StackPanel Grid.Column="1" Orientation="Vertical" Width="600">
-					<TextBlock x:Name="TxtBossName" Text="Mini-Boss"
-                               Foreground="#FFEE4444" FontWeight="Bold"
-                               FontSize="22" HorizontalAlignment="Center"/>
-					<Grid x:Name="BossBarContainer" Height="20">
-						<Border Background="#55222222" CornerRadius="10"/>
-						<Border x:Name="BossFill" Background="#FFEE4444" CornerRadius="10" Width="600"/>
-						<Border BorderBrush="#88FFFFFF" BorderThickness="1" CornerRadius="10"/>
-					</Grid>
-					<TextBlock x:Name="TxtBossHP" Text="40/40"
-                               Foreground="White" FontSize="14" FontFamily="Police\#Press Start 2P"
-                               HorizontalAlignment="Center"/>
-				</StackPanel>
-			</Grid>
-		</Border>
+		
 
 		<!-- Canvas du jeu -->
 		<Canvas x:Name="JeuCanvas" MouseLeftButtonDown="JeuCanvas_MouseLeftButtonDown">
