@@ -63,7 +63,7 @@ namespace LostAdventureTest
 			switch (type)
 			{
 				case EnemyType.Goblin:
-					HP = 10;
+					HP = 1;
 					MaxHP = 10;
 					Speed = 0.6;
 					Damage = 1;
@@ -88,7 +88,7 @@ namespace LostAdventureTest
 
 
 				case EnemyType.Brute:
-					HP = 40;
+					HP = 4;
                     MaxHP = 50;
 					Speed = 3.0;
 					Damage = 5;
@@ -112,14 +112,11 @@ namespace LostAdventureTest
                     }
                     break;
 
-
-
-
-                    break; 
+ 
 
                 case EnemyType.Boss:
-					HP = 50;
-					MaxHP = 50;
+					HP = 5;
+					MaxHP = 5;
 					Speed = 0.4;
 					Damage = 5;
 					GoldReward = 20;

@@ -14,7 +14,8 @@ namespace LostAdventureTest
         public int BossCount { get; set; }
 
 		public bool HasStatue { get; set; } = false;
-		public Point StatuePoint { get; set; } = new Point(1200, 600);
+		public bool CoffrePresent { get; set; } = false;	
+        public Point StatuePoint { get; set; } = new Point(1200, 600);
 
 		public Room? LeftRoom { get; set; }
 		public Room? RightRoom { get; set; }

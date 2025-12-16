@@ -34,6 +34,7 @@
     <None Remove="Img\butQuitter.png" />
     <None Remove="Img\butRegles.png" />
     <None Remove="Img\butTouches.png" />
+    <None Remove="Img\Coffre.png" />
     <None Remove="Img\CroixMenuRegles.png" />
     <None Remove="Img\Enemies\BossDragon.png" />
     <None Remove="Img\Enemies\BouleDeFeu.png" />
@@ -68,6 +69,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Img\Coffre.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Img\Enemies\Griffure(1).png" />
     <Resource Include="Img\Enemies\Griffure(10).png" />
     <Resource Include="Img\Enemies\Griffure(11).png" />

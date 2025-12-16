@@ -80,7 +80,8 @@ namespace LostAdventureTest
 
 			var room6 = new Room(backgrounds[5], "room6")
 			{
-				BossCount = 0
+				BossCount = 0,
+				CoffrePresent = true
             };
 
 
