@@ -31,7 +31,7 @@
 						<Border BorderBrush="#88FFFFFF" BorderThickness="1" CornerRadius="10"/>
 					</Grid>
 					<TextBlock x:Name="TxtBossHP" Text="40/40"
-                               Foreground="White" FontSize="14"
+                               Foreground="White" FontSize="14" FontFamily="Police\#Press Start 2P"
                                HorizontalAlignment="Center"/>
 				</StackPanel>
 			</Grid>

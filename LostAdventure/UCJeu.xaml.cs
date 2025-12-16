@@ -47,7 +47,7 @@ namespace LostAdventure
 
 		private void LoadRoom(Room room)
 		{
-			// Remove old enemies and their health bars
+			// enleve les anciens enemies et leur barre de vie
 			foreach (var enemy in activeEnemies)
 			{
 				JeuCanvas.Children.Remove(enemy.Sprite);
@@ -88,7 +88,7 @@ namespace LostAdventure
 
 					interactionText = new TextBlock
 					{
-						Text = "Press E to interact",
+						Text = "Appuyez sur E pour intéragir",
 						Foreground = Brushes.White,
 						FontSize = 18,
 						FontWeight = FontWeights.Bold,
@@ -109,7 +109,7 @@ namespace LostAdventure
 				statueImage.Visibility = Visibility.Collapsed;
 			}
 
-			// Spawn enemies
+			// spawn les enemies
 			activeEnemies = room.SpawnEnemies();
 			foreach (var enemy in activeEnemies)
 			{
@@ -117,7 +117,7 @@ namespace LostAdventure
 				Canvas.SetLeft(enemy.Sprite, enemy.X);
 				Canvas.SetTop(enemy.Sprite, enemy.Y);
 
-				// Create health bar
+				// ajoute une barre de vie aux enemies
 				enemy.HealthBarContainer = new Border
 				{
 					Width = 60,
@@ -139,7 +139,7 @@ namespace LostAdventure
 				JeuCanvas.Children.Add(enemy.HealthBarContainer);
 				Panel.SetZIndex(enemy.HealthBarContainer, 100);
 
-				// Center health bar for goblins (larger sprite)
+				// centre la barre de vie pour les gobelins
 				double initialHealthBarX = enemy.Type == EnemyType.Boss ? enemy.X + 270 : (enemy.Type == EnemyType.Goblin ? enemy.X + 170 : enemy.X + 20);
 				Canvas.SetLeft(enemy.HealthBarContainer, initialHealthBarX);
 				Canvas.SetTop(enemy.HealthBarContainer, enemy.Y - 10);
@@ -157,7 +157,7 @@ namespace LostAdventure
 		public void Jeu(object sender, EventArgs e)
 		{
 			player.Update();
-		// Add boundaries: cant go past left edge in room 1, or right edge in room 4
+		// ajoute des limites à gauche de la salle 1 et a droite de la salle du boss
 		const double LEFT_BOUNDARY = 0;
 		double rightBoundary = JeuCanvas.ActualWidth - player.Sprite.Width;
 
@@ -172,7 +172,7 @@ namespace LostAdventure
 			Canvas.SetLeft(player.Sprite, player.X);
 			Canvas.SetTop(player.Sprite, player.Y);
 
-			// Check if player is dead
+			// Check si  le joueur est mort
 			if (player.HP <= 0)
 			{
 				gameTimer.Stop();
@@ -195,7 +195,7 @@ namespace LostAdventure
 			}
 			wasAttacking = player.State == PlayerState.Attacking;
 
-		// Visual feedback for invulnerability (flashing effect)
+		// Visuel pour l'invunerabilité du joueur après un coup subit
 		if (player.IsInvulnerable)
 		{
 			player.Sprite.Opacity = (DateTime.UtcNow.Millisecond / 100) % 2 == 0 ? 0.5 : 1.0;
@@ -219,7 +219,7 @@ namespace LostAdventure
 
 			foreach (var enemy in activeEnemies.ToList())
 			{
-				// Move enemy toward player
+				// les enemies avance vers le joueur
 				if (enemy.X < player.X)
 					enemy.X += enemy.Speed;
 				else
@@ -230,7 +230,7 @@ namespace LostAdventure
 				// Update health bar position and width
 				if (enemy.HealthBarContainer != null && enemy.HealthBarFill != null)
 				{
-					// Center health bar above enemy sprite
+					// centre la barre de vie au dessus de l'enemie
 				double healthBarX = enemy.Type == EnemyType.Boss ? enemy.X + 270 : (enemy.Type == EnemyType.Goblin ? enemy.X + 170 : enemy.X + 20);
 					double healthBarY = enemy.Type == EnemyType.Goblin ? enemy.Y - 10 : enemy.Y - 10;
 
@@ -241,19 +241,19 @@ namespace LostAdventure
 					enemy.HealthBarFill.Width = 60 * healthPercent;
 				}
 
-				// Player attacks enemy
+				// Joueur attacque l'enemies
 				if (player.State == PlayerState.Attacking)
 				{
 					var attackBox = player.GetAttackHitbox();
 					var enemyBox = enemy.GetHitbox();
 					if (attackBox.IntersectsWith(enemyBox))
 					{
-						// Only damage each enemy once per attack
+						// une attaque ne fait que les dégats d'une attaque
 						if (!enemiesHitThisAttack.Contains(enemy))
 						{
 							enemiesHitThisAttack.Add(enemy);
 
-							// Give gold per hit (for goblins)
+							// les gobelins donne de l'or a chaque coup
 							if (enemy.GoldPerHit > 0)
 							{
 								player.Gold += enemy.GoldPerHit;
@@ -267,7 +267,7 @@ namespace LostAdventure
 									JeuCanvas.Children.Remove(enemy.HealthBarContainer);
 								activeEnemies.Remove(enemy);
 								player.Gold += enemy.GoldReward;
-						// Check if boss was defeated - show victory screen
+						// regarde si le boss est en vie et affiche le screen de la victoir
 						if (enemy.Type == EnemyType.Boss)
 						{
 							gameTimer.Stop();
@@ -281,13 +281,13 @@ namespace LostAdventure
 					}
 				}
 
-				// Enemy attacks player (collision detection)
+				// Enemies attaque le joueur (detection des colisions)
 				var playerBox = player.GetHitbox();
 				var enemyAttackBox = enemy.GetAttackHitbox();
 				if (playerBox.IntersectsWith(enemyAttackBox) && enemy.Damage > 0)
 				{
 					player.TakeDamage(enemy.Damage);
-					// Knockback enemy slightly after hitting player
+					// repousse l'enemie légerement apres une attaque
 					if (enemy.X < player.X)
 						enemy.X -= 20;
 					else
@@ -295,7 +295,7 @@ namespace LostAdventure
 				}
 			}
 
-			// Check proximity to statue
+			// check la proximité avec la statue
 			if (roomManager.CurrentRoom.HasStatue && statueImage != null)
 			{
 				double distanceToStatue = Math.Abs(player.X - roomManager.CurrentRoom.StatuePoint.X);

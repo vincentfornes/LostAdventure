@@ -10,7 +10,8 @@ namespace LostAdventureTest
 		public List<Point> SpawnPoints { get; } = new();
 
 		public int GoblinCount { get; set; }
-	public int BossCount { get; set; }
+		public int BruteCount { get; set; }	
+        public int BossCount { get; set; }
 
 		public bool HasStatue { get; set; } = false;
 		public Point StatuePoint { get; set; } = new Point(1200, 600);
@@ -33,7 +34,7 @@ namespace LostAdventureTest
 			var enemies = new List<Enemy>();
 			var random = new Random();
 
-			int totalEnemies = GoblinCount + BossCount;
+			int totalEnemies = GoblinCount + BruteCount + BossCount;
 			if (totalEnemies == 0) return enemies;
 
 			if (SpawnPoints.Count == 0)
@@ -51,22 +52,30 @@ namespace LostAdventureTest
 			{
 				var spawnPoint = SpawnPoints[spawnIndex % SpawnPoints.Count];
 				double offsetX = random.Next(-20, 21);
-				// Position goblin lower for better ground alignment
 				double goblinY = 550;
 				enemies.Add(new Enemy(EnemyType.Goblin, spawnPoint.X + offsetX, goblinY));
 				spawnIndex++;
 			}
-		for (int i = 0; i < BossCount; i++)
-		{
-			var spawnPoint = SpawnPoints[spawnIndex % SpawnPoints.Count];
-			double offsetX = random.Next(-20, 21);
-			// Position boss higher for better ground alignment
-			double bossY = 350;
-			enemies.Add(new Enemy(EnemyType.Boss, spawnPoint.X + offsetX, bossY));
-			spawnIndex++;
-		}
 
-			return enemies;
+			for (int i = 0; i < BruteCount; i++)
+			{
+				var spawnPoint = SpawnPoints[spawnIndex % SpawnPoints.Count];
+				double offsetX = random.Next(-20, 21);
+				double bruteY = 500;
+				enemies.Add(new Enemy(EnemyType.Brute, spawnPoint.X + offsetX, bruteY));
+				spawnIndex++;
+            }
+
+            for (int i = 0; i < BossCount; i++)
+			{
+				var spawnPoint = SpawnPoints[spawnIndex % SpawnPoints.Count];
+				double offsetX = random.Next(-20, 21);
+				double bossY = 350;
+				enemies.Add(new Enemy(EnemyType.Boss, spawnPoint.X + offsetX, bossY));
+				spawnIndex++;
+			}
+
+				return enemies;
 		}
 	}
 }
