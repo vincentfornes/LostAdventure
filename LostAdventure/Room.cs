@@ -52,7 +52,6 @@ namespace LostAdventureTest
 			{
 				var spawnPoint = SpawnPoints[spawnIndex % SpawnPoints.Count];
 				double offsetX = random.Next(-20, 21);
-				// Position goblin lower for better ground alignment
 				double goblinY = 550;
 				enemies.Add(new Enemy(EnemyType.Goblin, spawnPoint.X + offsetX, goblinY));
 				spawnIndex++;
@@ -62,7 +61,6 @@ namespace LostAdventureTest
 			{
 				var spawnPoint = SpawnPoints[spawnIndex % SpawnPoints.Count];
 				double offsetX = random.Next(-20, 21);
-				// Position brute lower for better ground alignment
 				double bruteY = 500;
 				enemies.Add(new Enemy(EnemyType.Brute, spawnPoint.X + offsetX, bruteY));
 				spawnIndex++;
@@ -72,7 +70,6 @@ namespace LostAdventureTest
 			{
 				var spawnPoint = SpawnPoints[spawnIndex % SpawnPoints.Count];
 				double offsetX = random.Next(-20, 21);
-				// Position boss higher for better ground alignment
 				double bossY = 350;
 				enemies.Add(new Enemy(EnemyType.Boss, spawnPoint.X + offsetX, bossY));
 				spawnIndex++;

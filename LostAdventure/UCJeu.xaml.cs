@@ -47,7 +47,7 @@ namespace LostAdventure
 
 		private void LoadRoom(Room room)
 		{
-			// Remove old enemies and their health bars
+			// enleve les anciens enemies et leur barre de vie
 			foreach (var enemy in activeEnemies)
 			{
 				JeuCanvas.Children.Remove(enemy.Sprite);

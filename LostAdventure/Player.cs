@@ -130,7 +130,7 @@ namespace LostAdventureTest
 		{
 			Animator.Update();
 
-			// Handle dodge state
+			// Statue d'esquive
 			if (State == PlayerState.Dodging)
 			{
 				var elapsed = (DateTime.UtcNow - dodgeStartTime).TotalMilliseconds;
@@ -140,12 +140,12 @@ namespace LostAdventureTest
 				}
 				else
 				{
-					// Fast dash in facing direction
+					// vitesse du dash et direction
 					velocityX = facingRight ? DODGE_SPEED : -DODGE_SPEED;
 					X += velocityX;
 				}
 			}
-			// Handle attack state
+			// Statue d'attaque
 			else if (State == PlayerState.Attacking)
 			{
 				var elapsed = (DateTime.UtcNow - attackStartTime).TotalMilliseconds;
@@ -153,7 +153,7 @@ namespace LostAdventureTest
 				{
 					State = PlayerState.Idle;
 				}
-				// Can still move horizontally while attacking
+				// attaquer en mouvement
 				velocityX = 0;
 				if (moveLeftPressed)
 				{
@@ -167,7 +167,7 @@ namespace LostAdventureTest
 				}
 				X += velocityX;
 			}
-			// Normal movement
+			// mouvement normal
 			else
 			{
 				velocityX = 0;
@@ -185,7 +185,7 @@ namespace LostAdventureTest
 
 				X += velocityX;
 
-				// Update animation based on movement
+				// Update l'animation en fonction des mouvements
 				if (velocityX != 0 && isGrounded)
 				{
 					if (State != PlayerState.Walking)
@@ -204,7 +204,7 @@ namespace LostAdventureTest
 				}
 			}
 
-			// Apply gravity
+			// gravité pour les sauts
 			if (!isGrounded)
 			{
 				velocityY += GRAVITY;
@@ -212,7 +212,7 @@ namespace LostAdventureTest
 
 			Y += velocityY;
 
-			// Ground collision
+			// collision avec le sol
 			if (Y >= GROUND_Y)
 			{
 				Y = GROUND_Y;
@@ -245,7 +245,7 @@ namespace LostAdventureTest
 		var timeSinceLastDamage = (DateTime.UtcNow - lastDamageTime).TotalMilliseconds;
 		if (timeSinceLastDamage < INVULNERABILITY_MS)
 		{
-			return false; // Still invulnerable
+			return false; // toujours invulnerable
 		}
 
 		HP -= damage;

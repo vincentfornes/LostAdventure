@@ -120,21 +120,21 @@ namespace LostAdventureTest
 
 		public Rect GetHitbox()
 		{
-			// All enemies use full sprite size for hitbox
+			// hitbox de l'enemie = taille du sprite
 			return new Rect(X, Y, Sprite.Width, Sprite.Height);
 		}
 
 	public Rect GetAttackHitbox()
 	{
-		// Reduced attack hitboxes for all enemies - must be close to hit player
+		
 		if (Type == EnemyType.Boss)
 		{
-			// Very large attack hitbox for boss (600x600 sprite) - positioned to hit player at ground level
+			
 			return new Rect(X + 150, Y + 250, 300, 350);
 		}
 		else if (Type == EnemyType.Goblin)
 		{
-			// Larger attack hitbox for goblins (400x400 sprite) - positioned in center/bottom
+			
 			return new Rect(X + 100, Y + 250, 200, 150);
 		}
 
@@ -144,7 +144,7 @@ namespace LostAdventureTest
             }
 
 
-                // Other enemies: 60x60 hitbox centered (instead of 100x100 full sprite)
+                
                 return new Rect(X + 20, Y + 20, 60, 60);
 	}
 	}

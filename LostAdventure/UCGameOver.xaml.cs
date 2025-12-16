@@ -12,14 +12,14 @@ namespace LostAdventure
 
 		private void butRestart_Click(object sender, RoutedEventArgs e)
 		{
-			// Restart the game
+			// Restart le jeux
 			var mainWindow = Application.Current.MainWindow as MainWindow;
 			mainWindow?.AfficheJeu();
 		}
 
 		private void butLeave_Click(object sender, RoutedEventArgs e)
 		{
-			// Return to main menu
+			// Retourne au Menu principale
 			var mainWindow = Application.Current.MainWindow as MainWindow;
 			mainWindow?.AfficheMainMenu();
 		}
