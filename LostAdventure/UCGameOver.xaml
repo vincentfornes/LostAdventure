@@ -11,6 +11,7 @@
 			           Foreground="Red"
 			           FontSize="80"
 			           FontWeight="Bold"
+                       FontFamily="***/Police/PressStart2P-Regular.ttf#Press Start 2P**"
 			           HorizontalAlignment="Center"
 			           Margin="0,0,0,50"/>
 

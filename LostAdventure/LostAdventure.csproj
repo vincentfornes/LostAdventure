@@ -22,6 +22,13 @@
     <None Remove="Img\Aventurier\AventurierMarche%286%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%287%29.png" />
     <None Remove="Img\Aventurier\AventurierMarche%288%29.png" />
+    <None Remove="Img\Brute\BruteAttaque%281%29.png" />
+    <None Remove="Img\Brute\BruteAttaque%282%29.png" />
+    <None Remove="Img\Brute\BruteAttaque%283%29.png" />
+    <None Remove="Img\Brute\BruteAttaque%284%29.png" />
+    <None Remove="Img\Brute\BruteAttaque%285%29.png" />
+    <None Remove="Img\Brute\BruteAttaque%286%29.png" />
+    <None Remove="Img\Brute\BruteAttaque%287%29.png" />
     <None Remove="Img\butJouer.png" />
     <None Remove="Img\butQuitter.png" />
     <None Remove="Img\butRegles.png" />
@@ -77,6 +84,13 @@
     <Resource Include="Img\Aventurier\AventurierMarche(8).png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Img\Brute\BruteAttaque(1).png" />
+    <Resource Include="Img\Brute\BruteAttaque(2).png" />
+    <Resource Include="Img\Brute\BruteAttaque(3).png" />
+    <Resource Include="Img\Brute\BruteAttaque(4).png" />
+    <Resource Include="Img\Brute\BruteAttaque(5).png" />
+    <Resource Include="Img\Brute\BruteAttaque(6).png" />
+    <Resource Include="Img\Brute\BruteAttaque(7).png" />
     <Resource Include="Img\MainMenu\butJouer.png" />
     <Resource Include="Img\MainMenu\butQuitter.png" />
     <Resource Include="Img\MainMenu\butRegles.png" />
