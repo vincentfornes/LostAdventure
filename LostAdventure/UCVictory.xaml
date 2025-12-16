@@ -15,7 +15,7 @@
 			           HorizontalAlignment="Center"
 			           Margin="0,0,0,30"/>
 
-			<TextBlock Text="Vous avez battu le dragon et récupéré le trésor !"
+			<TextBlock Text="Vous avez battu le dragon !"
 			           Foreground="White"
 			           FontSize="30"
                        FontFamily="Police\#Press Start 2P"

@@ -205,7 +205,7 @@ namespace LostAdventure
 		{
 			gameTimer = new System.Windows.Threading.DispatcherTimer();
 			gameTimer.Tick += Jeu;
-			gameTimer.Interval = TimeSpan.FromMilliseconds(60);
+			gameTimer.Interval = TimeSpan.FromMilliseconds(8);
 			gameTimer.Start();
 		}
 
@@ -387,10 +387,11 @@ namespace LostAdventure
 				player.Jump();
 			else if (e.Key == Key.LeftShift || e.Key == Key.RightShift)
 				player.StartDodge();
-			else if (e.Key == Key.E && isNearStatue)
-				OpenStatueMenu();
-			else if (e.Key == Key.E && isNearCoffre)
-				OpenVictory();
+			else if (e.Key == Key.E )
+				if (isNearStatue)
+					OpenStatueMenu();
+                else if (isNearCoffre)
+					OpenVictory();
         }
 
 		private void canvasJeu_KeyUp(object sender, KeyEventArgs e)
@@ -452,8 +453,8 @@ namespace LostAdventure
 			}
 			gameTimer.Start();
 		}
-
-        private void OpenVictory()
+		
+		private void OpenVictory()
         {
             gameTimer.Stop();
 
