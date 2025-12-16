@@ -25,7 +25,7 @@ namespace LostAdventureTest
 
 		private void ShuffleBackgrounds()
 		{
-			// Fisher-Yates shuffle algorithm
+			// random background entre les 4
 			for (int i = backgrounds.Length - 1; i > 0; i--)
 			{
 				int j = random.Next(i + 1);
@@ -37,7 +37,7 @@ namespace LostAdventureTest
 
 		public void InitializeRooms()
 		{
-			// Shuffle backgrounds to ensure each room gets a unique one
+			// une image par salle
 			ShuffleBackgrounds();
 
 			var room1 = new Room(backgrounds[0], "entrance")
