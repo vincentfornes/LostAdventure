@@ -30,7 +30,7 @@ namespace LostAdventure
 			InitializeGameTimer();
 		}
 
-		private void InitializeGame()
+		public void InitializeGame()
 		{
 			player = new Player();
 			JeuCanvas.Children.Add(player.Sprite);

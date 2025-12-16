@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -10,11 +11,7 @@ namespace LostAdventureTest
 	{
 		public EnemyType Type { get; set; }
 		
-		public enum EtatBrute
-		{		
-			Marche,
-			Attaque
-        }
+		
 
         public enum EtatBoss
 		{
@@ -40,11 +37,20 @@ namespace LostAdventureTest
 
 		public bool IsAlive => HP > 0;
 
-		public Enemy(EnemyType type, double x, double y)
+		public bool JoueurDansPortee(Player player)
+		{
+			Rect enemyHitbox = GetHitbox();
+			Rect playerHitbox = new Rect(player.X, player.Y, player.Sprite.Width, player.Sprite.Height);
+			return enemyHitbox.IntersectsWith(playerHitbox);
+        }
+
+        public Enemy(EnemyType type, double x, double y)
 		{
 			Type = type;
 			X = x;
 			Y = y;
+
+			
 
 			Sprite = new Image
 			{
@@ -80,6 +86,7 @@ namespace LostAdventureTest
 					}
 					break;
 
+
 				case EnemyType.Brute:
 					HP = 40;
                     MaxHP = 50;
@@ -89,94 +96,26 @@ namespace LostAdventureTest
 					GoldPerHit = 1;
 					Sprite.Width = 500;
 					Sprite.Height = 500;
-					EtatBrute etat = EtatBrute.Immobile;
-					Sprite = new Image
-					{
-						Width = 210,
-						Height = 240,
-						RenderTransformOrigin = new Point(0.5, 0.5),
-						RenderTransform = new ScaleTransform(1, 1)
-					};
+
+                    try
+                    {
+                        var bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteImmobile.png", UriKind.Absolute);
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+                        Sprite.Source = bitmap;
+                    }
+                    catch
+                    {
+                        // L'image ne s'est pas chargé
+                    }
+                    break;
 
 
-					Animator = new SpriteAnimator(Sprite);
-
-					Animator.DefineSequence("Immobile", "pack://application:,,,/Img/Brute/BruteImmobile.png", 1);
-					Animator.DefineSequence("Marche", "pack://application:,,,/Img/Brute/BruteImmobile.png", 1);
-					Animator.DefineSequence("Saut", "pack://application:,,,/Img/Brute/BruteAttaque(4).png", 3);
-					Animator.DefineSequence("Attaque", "pack://application:,,,/Img/Brute/BruteAttaque(1).png", 7);
-					X = x;
-					Y = y;
 
 
-					switch (etat)
-					{
-						case EtatBrute.Immobile:
-							try
-							{
-								var bitmap = new BitmapImage();
-								bitmap.BeginInit();
-								bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteImmobile.png", UriKind.Absolute);
-								Animator.Play("Immobile", fps: 1, loop: true);
-								bitmap.CacheOption = BitmapCacheOption.OnLoad;
-								bitmap.EndInit();
-								Sprite.Source = bitmap;
-							}
-							catch
-							{
-								// L'image ne s'est pas chargé
-							}
-							break;
-						case EtatBrute.Marche:
-							try
-							{
-								var bitmap = new BitmapImage();
-								bitmap.BeginInit();
-								bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteImmobile.png", UriKind.Absolute);
-								Animator.Play("Marche", fps: 5, loop: true);
-                                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-								bitmap.EndInit();
-								Sprite.Source = bitmap;
-
-							}
-							catch
-							{
-								// L'image ne s'est pas chargé
-							} break;
-						case EtatBrute.Saut:
-							try
-							{
-								var bitmap = new BitmapImage();
-								bitmap.BeginInit();
-								bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteAttaque(4).png", UriKind.Absolute);
-								Animator.Play("Saut", fps: 5, loop: false);
-                                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-								bitmap.EndInit();
-							}
-							catch
-							{
-
-								//L'image ne s'est pas chargé
-							}
-						break;
-						case EtatBrute.Attaque:
-							try
-							{
-								var bitmap = new BitmapImage();
-								bitmap.BeginInit();
-								bitmap.UriSource = new Uri("pack://application:,,,/Img/Brute/BruteAttaque(1).png", UriKind.Absolute);
-								Animator.Play("Attaque", fps: 7, loop: false);
-                                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-								bitmap.EndInit();
-								Sprite.Source = bitmap;
-							}
-							catch
-							{
-								//L'image ne s'est pas chargé
-							}
-						break;
-			}
-				break; 
+                    break; 
 
                 case EnemyType.Boss:
 					HP = 50;
