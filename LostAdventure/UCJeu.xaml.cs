@@ -157,7 +157,7 @@ namespace LostAdventure
 		public void Jeu(object sender, EventArgs e)
 		{
 			player.Update();
-		// Add boundaries: cant go past left edge in room 1, or right edge in room 4
+		// ajoute des limites à gauche de la salle 1 et a droite de la salle du boss
 		const double LEFT_BOUNDARY = 0;
 		double rightBoundary = JeuCanvas.ActualWidth - player.Sprite.Width;
 
@@ -172,7 +172,7 @@ namespace LostAdventure
 			Canvas.SetLeft(player.Sprite, player.X);
 			Canvas.SetTop(player.Sprite, player.Y);
 
-			// Check if player is dead
+			// Check si  le joueur est mort
 			if (player.HP <= 0)
 			{
 				gameTimer.Stop();
