@@ -19,9 +19,15 @@ namespace LostAdventure
 	{
         public static MediaPlayer musiqueDeFond = new MediaPlayer();
         public static double nivSon = 50;
-        public static double GetNivSon()
+        public static double NivSon
         {
-            return nivSon;
+            get { return nivSon; }
+            set
+            {
+                nivSon = value;
+                // Important : Mettre à jour le volume dès que la valeur est changée
+                SetVolumeMusiqueDeFond();
+            }
         }
         public UCMainMenu()
 		{
@@ -59,21 +65,33 @@ namespace LostAdventure
 
 
         public void InitMusiqueDeFond()
-		{
-			if (musiqueDeFond != null)
-			{
+        {
+            try
+            {
                 musiqueDeFond.Open(new Uri("Sons/MusiquePremièreSalle.mp3", UriKind.Relative));
-                musiqueDeFond.Volume = nivSon / 100;
+                musiqueDeFond.Volume = NivSon / 100.0;
+                musiqueDeFond.MediaEnded += (s, e) =>
+                {
+                    musiqueDeFond.Position = TimeSpan.Zero;
+                    musiqueDeFond.Play();
+                };
                 musiqueDeFond.Play();
-                musiqueDeFond.MediaEnded += (s, e) => musiqueDeFond.Position = TimeSpan.Zero;
-                 
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur musique : " + ex.Message);
+            }
+        }
+        public static void SetVolumeMusiqueDeFond()
+        {
+            // Le volume de MediaPlayer utilise une échelle de 0.0 à 1.0.
+            musiqueDeFond.Volume = NivSon / 100.0;
+           
         }
 
 
 
-        
+
     }
 }
 

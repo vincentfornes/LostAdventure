@@ -47,7 +47,7 @@
                 Click="butQuitter_Click">
             <Image Source="/Img/MainMenu/butQuitter.png" Stretch="Fill"/>
         </Button>
-        <Button x:Name="butParametres" Content="Paramètres" HorizontalAlignment="Left" Margin="1206,788,0,0" VerticalAlignment="Top" Click="butParametres_Click"/>
+        <Button x:Name="butParametres" Content="Paramètres" HorizontalAlignment="Center" Margin="0,830,0,0" VerticalAlignment="Top" Click="butParametres_Click"/>
 
 
     </Grid>

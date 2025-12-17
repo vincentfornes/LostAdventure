@@ -11,27 +11,30 @@
 
 
     <Grid>
-        <Label Content="Volume du son :" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top" FontSize="13" FontFamily="Police\#Press Start 2P" Foreground="White" />
-
-        <StackPanel Margin="-10,0,10,0">
-            <Slider x:Name="slidSon" Width="350" Height="25" Minimum="1"
-     Maximum="100"
-     Value="50"
-     TickFrequency="1"
-     IsSnapToTickEnabled="True"
-     HorizontalAlignment="Center" Margin="20,132,0,293"/>
-        </StackPanel>
-        <Button x:Name="TailleFenetre" Content="Agrandir/Rétrécir Fenêtre" HorizontalAlignment="Left" Margin="765,627,0,0" VerticalAlignment="Top" Height="71" Width="186"/>
 
         <Button x:Name="butQuitterParamètres"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Top"
-        Margin="1300,92,0,0"
-        Width="100" Height="100" Click="butQuitterParamètres_Click" RenderTransformOrigin="2.055,1.895"
-        >
+HorizontalAlignment="Left"
+VerticalAlignment="Top"
+
+Width="100" Height="100" Click="butQuitterParamètres_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Img/ReglesMenu/CroixMenuRegles.png"/>
             </Button.Background>
         </Button>
+        <Label Content="Volume du son :" HorizontalAlignment="Left" Margin="20,400,0,0" VerticalAlignment="Top" FontSize="13" FontFamily="Police\#Press Start 2P" Foreground="White" />
+    
+        <StackPanel Margin="-10,0,10,0">
+        
+            <Slider x:Name="slidSon" Width="350" Height="25" Minimum="1"
+     Maximum="100"
+     Value="{Binding Nivson, Mode=TwoWay}"
+     TickFrequency="1"
+     IsSnapToTickEnabled="True"
+     HorizontalAlignment="Center" Margin="20,400,0,293"/>
+            <Button x:Name="TailleFenetre" Content="Agrandir/Rétrécir Fenêtre" HorizontalAlignment="Left" VerticalAlignment="Top" Click="TailleFenetre_Click"/>
+
+        </StackPanel>
+        
     </Grid>
+    
 </UserControl>
