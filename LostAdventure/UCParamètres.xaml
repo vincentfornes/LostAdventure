@@ -27,10 +27,10 @@ Width="100" Height="100" Click="butQuitterParamètres_Click">
         
             <Slider x:Name="slidSon" Width="350" Height="25" Minimum="1"
      Maximum="100"
-     Value="{Binding Nivson, Mode=TwoWay}"
+     Value = "50"
      TickFrequency="1"
      IsSnapToTickEnabled="True"
-     HorizontalAlignment="Center" Margin="20,400,0,293"/>
+     HorizontalAlignment="Center" Margin="20,400,0,293" ValueChanged="slidSon_ValueChanged"/>
             <Button x:Name="TailleFenetre" Content="Agrandir/Rétrécir Fenêtre" HorizontalAlignment="Left" VerticalAlignment="Top" Click="TailleFenetre_Click"/>
 
         </StackPanel>

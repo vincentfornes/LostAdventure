@@ -23,16 +23,10 @@ namespace LostAdventure
         public UCParamètres()
         {
             InitializeComponent();
-            slidSon.Value = UCMainMenu.nivSon;
-            slidSon.ValueChanged += SlidSon_ValueChanged;
+            
         }
 
-        
-        private void SlidSon_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            UCMainMenu.nivSon = slidSon.Value;
-            UCMainMenu.musiqueDeFond.Volume = UCMainMenu.nivSon / 100;
-        }
+       
 
         private void butQuitterParamètres_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +48,15 @@ namespace LostAdventure
                 {
                     mainWindow.WindowState = WindowState.Normal;
                 }
+            }
+        }
+
+        private void slidSon_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.SetVolumeMusique(e.NewValue);
             }
         }
     }

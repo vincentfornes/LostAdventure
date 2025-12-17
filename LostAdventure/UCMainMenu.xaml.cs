@@ -26,13 +26,13 @@ namespace LostAdventure
             {
                 nivSon = value;
                 // Important : Mettre à jour le volume dès que la valeur est changée
-                SetVolumeMusiqueDeFond();
+                //SetVolumeMusiqueDeFond();
             }
         }
         public UCMainMenu()
 		{
 			InitializeComponent();
-			InitMusiqueDeFond();
+		    //InitMusiqueDeFond();
         }
 
 		private void butJouer_Click(object sender, RoutedEventArgs e)
@@ -63,7 +63,7 @@ namespace LostAdventure
             main.AfficheParametres();
         }
 
-
+        /*
         public void InitMusiqueDeFond()
         {
             try
@@ -88,7 +88,7 @@ namespace LostAdventure
             musiqueDeFond.Volume = NivSon / 100.0;
            
         }
-
+        */
 
 
 

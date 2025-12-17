@@ -44,7 +44,11 @@
     <None Remove="Img\TouchesMenu\TouchesMenu.png" />
     <None Remove="nul" />
     <None Remove="Police\PressStart2P-Regular.ttf" />
-    <None Remove="Sons\MusiquePremièresSalle.mp3" />
+    <None Remove="Sons\Musique.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Sons\Musique.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -108,9 +112,6 @@
     <Resource Include="Img\TouchesMenu\TouchesIcones.png" />
     <Resource Include="Img\TouchesMenu\TouchesMenu.png" />
     <Resource Include="Police\PressStart2P-Regular.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Sons\MusiquePremièresSalle.mp3">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

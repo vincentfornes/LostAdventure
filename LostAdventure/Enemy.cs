@@ -115,8 +115,8 @@ namespace LostAdventureTest
  
 
                 case EnemyType.Boss:
-					HP = 50;
-					MaxHP = 50;
+					HP = 100;
+					MaxHP = 100;
 					Speed = 0.4;
 					Damage = 5;
 					GoldReward = 20;
