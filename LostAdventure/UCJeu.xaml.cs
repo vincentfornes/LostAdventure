@@ -31,7 +31,7 @@ namespace LostAdventure
 			InitializeGame();
 			InitializeGameTimer();
 		}
-
+		// Créations des salles
 		public void InitializeGame()
 		{
 			player = new Player();
@@ -76,7 +76,7 @@ namespace LostAdventure
 			backgroundImage.Height = JeuCanvas.ActualHeight > 0 ? JeuCanvas.ActualHeight : 900;
 
 
-			// Handle statue
+			// Vérification Statue
 			if (room.HasStatue)
 			{
 				if (statueImage == null)
@@ -112,7 +112,7 @@ namespace LostAdventure
 			{
 				statueImage.Visibility = Visibility.Collapsed;
 			}
-
+            // Vérification Coffre	
             if (room.CoffrePresent)
             {
 				
@@ -203,8 +203,8 @@ namespace LostAdventure
 				Canvas.SetTop(enemy.HealthBarContainer, enemy.Y - 10);
 			}
 		}
-
-		private void InitializeGameTimer()
+        // Boucle de jeu
+        private void InitializeGameTimer()
 		{
 			gameTimer = new System.Windows.Threading.DispatcherTimer();
 			gameTimer.Tick += Jeu;
@@ -263,8 +263,8 @@ namespace LostAdventure
 				player.Sprite.Opacity = 1.0;
 			}
 
-
-			var newRoom = roomManager.CheckTransition(player, JeuCanvas.ActualWidth);
+            // ===== Changement de salle =====
+            var newRoom = roomManager.CheckTransition(player, JeuCanvas.ActualWidth);
 			if (newRoom != null)
 			{
 				if (player.X < 50)
@@ -323,8 +323,8 @@ namespace LostAdventure
 
 				Canvas.SetLeft(enemy.Sprite, enemy.X);
 
-				// Update health bar position and width
-				if (enemy.HealthBarContainer != null && enemy.HealthBarFill != null)
+                // Update la barre de vie et sa largeur
+                if (enemy.HealthBarContainer != null && enemy.HealthBarFill != null)
 				{
 					// centre la barre de vie au dessus de l'enemie
 					double healthBarX = enemy.Type == EnemyType.Boss ? enemy.X + 270 : (enemy.Type == EnemyType.Goblin ? enemy.X + 170 : enemy.X + 20);
@@ -421,8 +421,8 @@ namespace LostAdventure
 		}	
 	}
 
-
-		private void UpdateHUD()
+        // Met à jour les éléments HUD
+        private void UpdateHUD()
 		{
 			TxtHP.Text = $"{player.HP}/{player.MaxHP}";
 			double hpPercent = (double)player.HP / player.MaxHP;
@@ -461,8 +461,8 @@ namespace LostAdventure
 		{
 			player.StartAttack();
 		}
-
-		private void OpenStatueMenu()
+        // Ouvre le menu de la statue
+        private void OpenStatueMenu()
 		{
 			gameTimer.Stop();
 
