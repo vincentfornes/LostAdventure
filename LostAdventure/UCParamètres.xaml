@@ -24,13 +24,13 @@ Width="100" Height="100" Click="butQuitterParamètres_Click">
         <Label Content="Volume du son :" HorizontalAlignment="Left" Margin="20,400,0,0" VerticalAlignment="Top" FontSize="13" FontFamily="Police\#Press Start 2P" Foreground="White" />
     
         <StackPanel Margin="-10,0,10,0">
-        
+
             <Slider x:Name="slidSon" Width="350" Height="25" Minimum="1"
-     Maximum="100"
-     Value = "50"
-     TickFrequency="1"
-     IsSnapToTickEnabled="True"
-     HorizontalAlignment="Center" Margin="20,400,0,293" ValueChanged="slidSon_ValueChanged"/>
+                 Maximum="100"
+                 Value = "50"
+                 TickFrequency="1"
+                 IsSnapToTickEnabled="True"
+                 HorizontalAlignment="Center" Margin="20,400,0,293" ValueChanged="slidSon_ValueChanged"/>   
             <Button x:Name="TailleFenetre" Content="Agrandir/Rétrécir Fenêtre" HorizontalAlignment="Left" VerticalAlignment="Top" Click="TailleFenetre_Click"/>
 
         </StackPanel>

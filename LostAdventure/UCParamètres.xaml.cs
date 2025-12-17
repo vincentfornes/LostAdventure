@@ -53,10 +53,10 @@ namespace LostAdventure
 
         private void slidSon_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
+            var main = Application.Current.MainWindow as MainWindow;
+            if (main != null)
             {
-                mainWindow.SetVolumeMusique(e.NewValue);
+                main.SetVolume(e.NewValue); // ✅ ajuste le volume
             }
         }
     }

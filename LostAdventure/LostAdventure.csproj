@@ -48,7 +48,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Sons\Musique.wav" />
+    <Content Include="Sons\Musique.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

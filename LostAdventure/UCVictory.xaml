@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         d:DesignHeight="900" d:DesignWidth="1600">
-	<Grid Background="#AA000000">
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-			<TextBlock Text="VICTOIRE!"
+    <Grid Background="#AA000000">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="182*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,34,0,0" Grid.Row="1">
+            <TextBlock Text="VICTOIRE!"
 			           Foreground="Gold"
 			           FontSize="100"
 			           FontWeight="Bold"
@@ -15,14 +19,14 @@
 			           HorizontalAlignment="Center"
 			           Margin="0,0,0,30"/>
 
-			<TextBlock Text="Vous avez battu le dragon !"
+            <TextBlock Text="Vous avez battu le dragon et trouvé le trésor!"
 			           Foreground="White"
 			           FontSize="30"
                        FontFamily="Police\#Press Start 2P"
 			           HorizontalAlignment="Center"
 			           Margin="0,0,0,50" Height="68"/>
 
-			<Button x:Name="butRestart"
+            <Button x:Name="butRestart"
 			        Content="REJOUER"
 			        Width="300"
 			        Height="80"
@@ -34,7 +38,7 @@
 			        Background="#FFD700"
 			        Foreground="Black"/>
 
-			<Button x:Name="butLeave"
+            <Button x:Name="butLeave"
 			        Content="MENU"
 			        Width="300"
 			        Height="80"
@@ -45,6 +49,6 @@
 			        Click="butLeave_Click"
 			        Background="#444444"
 			        Foreground="White"/>
-		</StackPanel>
-	</Grid>
+        </StackPanel>
+    </Grid>
 </UserControl>

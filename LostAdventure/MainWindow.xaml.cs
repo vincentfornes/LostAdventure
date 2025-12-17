@@ -1,4 +1,6 @@
 ﻿using System.Media;
+using System.Net;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media;
 
@@ -6,36 +8,28 @@ namespace LostAdventure
 {
 	public partial class MainWindow : Window
 	{
-        private MediaPlayer sonTest = new MediaPlayer();
-        public static double nivSon = 50;
-        private static MediaPlayer musique;
+        private static MediaPlayer musique = new MediaPlayer();
+
+        
 
         public MainWindow()
 		{
 			InitializeComponent();
 			AfficheMainMenu();
-            InitialiseMusique();
+            InitMusique(); 
+            JouerMusique();
 
         }
 
-		private void InitialiseMusique()
-		{
-			musique = new MediaPlayer();
-			musique.Open(new System.Uri("Sons/Musique.mp3", System.UriKind.Relative));
-			musique.MediaEnded += RelanceMusique;
-			musique.Volume = nivSon / 100.0 ;
-			musique.Play();
-			Console.WriteLine("Musique lancée");
-        }
 
-        public void SetVolumeMusique(double volume)
+        private void InitMusique()
         {
-            if (musique != null)
-            {
-                nivSon = volume;
-                musique.Volume = volume / 100.0; // ✅ Convertir le pourcentage en volume (0-1)
-                Console.WriteLine($"Volume changé: {musique.Volume}");
-            }
+            musique.Open(new Uri(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Sons/Musique.wav")));
+            
+            
+            musique.MediaEnded += RelanceMusique;
+            musique.Volume = 1.0; // volume par défaut
+            musique.Play();
         }
 
         private void RelanceMusique(object? sender, EventArgs e)
@@ -44,11 +38,26 @@ namespace LostAdventure
             musique.Play();
         }
 
-        public static void SetVolumeMusique()
+        private void JouerMusique()
         {
-            if (musique != null)
-                musique.Volume = nivSon;
+            musique.Open(new Uri(@"C:\Users\TonNom\source\repos\SAE101\LostAdventure\Sons\Musique.wav", UriKind.Absolute));
+            musique.MediaEnded += (s, e) =>
+            {
+                musique.Position = TimeSpan.Zero;
+                musique.Play();
+            };
+            musique.Volume = 1.0;
+            musique.Play();
         }
+
+        // ✅ Méthode publique pour changer le volume
+        public void SetVolume(double volume)
+        {
+            musique.Volume = volume / 100.0; // slider 0-100 → volume 0-1
+        }
+
+
+
 
         public void AfficheMainMenu()
 		{
